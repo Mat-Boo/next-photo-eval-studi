@@ -3,6 +3,8 @@ import styles from '../../styles/prestations/prestation.module.scss';
 import Image from 'next/image';
 import Link from 'next/link';
 import { DataContext } from '../../context/context';
+import fs from 'fs';
+import matter from 'gray-matter'
 
 export default function Prestation(props) {
     
@@ -15,31 +17,30 @@ export default function Prestation(props) {
         setPrestaContact(props.selectedCategory.prestation.title)
     } */
 
-
     return (
         <div className={styles.prestation}>
-            <h2>{props.selectedCategory.prestation.title}</h2>
+            <h2>{props.data.title}</h2>
             <div className={styles.prestaDescr}>
                 <div className={styles.description}>
                     <div className={styles.titleAndDescr}>
                         <h3>- Description -</h3>
-                        <h5>{props.selectedCategory.prestation.content}</h5>
-                        <p>{props.selectedCategory.prestation.description}</p>
+                        <h5>{props.data.subtitle}</h5>
+                        <p>{props.data.description}</p>
                     </div>
                     <div  className={styles.silhouette}>
-                        <Image src={'/resources/silhouette/'+ props.selectedCategory.slug + '.svg'} alt='clipartPresta' width='150' height='150'/>
+                        <Image src={props.data.clipart} alt='clipartPresta' width='150' height='150'/>
                     </div>
                 </div>
                 <div className={styles.pictureAndInfos}>
                     <div className={styles.picture}>
-                        <Image src={'/resources/gallery/' + props.selectedCategory.slug + '/' + props.selectedCategory.slug + '-0001.jpg'} alt={props.selectedCategory.slug + 'Picture'} width='1920' height='1280'/>
+                        <Image src={props.data.picture} alt={props.data.title + 'Picture'} width='1920' height='1280'/>
                     </div>
                     <div className={styles.infos}>
                         <div className={styles.titleAndFare}>
                             <h3>- Informations complémentaires -</h3>
-                            <span className={styles.fare}>{props.selectedCategory.prestation.fare + (isNaN(props.selectedCategory.prestation.fare) ? '' : ' €')}</span>
+                            <span className={styles.fare}>{props.data.fare + (isNaN(props.data.fare) ? '' : ' €')}</span>
                         </div>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Fermentum iaculis eu non diam phasellus vestibulum lorem sed risus. Dictumst vestibulum rhoncus est pellentesque elit ullamcorper. Justo nec ultrices dui sapien eget. Eget felis eget nunc lobortis mattis. Sed elementum tempus egestas sed sed risus. Magna sit amet purus gravida quis blandit turpis.</p>
+                        <p>{props.data.infosSup}</p>
                         <Link href='/contact'>
                             <a className={styles.contactBtn}>Contactez-moi pour cette prestation</a>
                         </Link>
@@ -51,7 +52,18 @@ export default function Prestation(props) {
 }
 
 export async function getStaticProps(context) {
-    const slug = context.params.prestation;
+
+    const prestationMd = fs.readFileSync(`./data/prestations/${context.params.prestation}.md`, 'utf-8');
+    const {content,data} = matter(prestationMd);
+
+    return {
+        props: {
+            content, 
+			data
+        }
+    }
+
+    /* const slug = context.params.prestation;
     const data = await import('../../data/data.json');
     const selectedCategory = data.categories.find(category => category.prestation.slugPresta === slug);
 
@@ -59,11 +71,27 @@ export async function getStaticProps(context) {
         props: {
             selectedCategory
         }
-    }
+    } */
 }
 
 export async function getStaticPaths() {
-    const data = await import('../../data/data.json');
+    // On lit le contenu du dossier
+    const files = fs.readdirSync('data/prestations/', "utf-8");
+
+    // on récupère tous les fichiers markdown dans ce dossier et on génère les paths et on les retourne à la fin de la fonction.
+	const paths = files.map(file =>  (
+        {
+            params : {prestation: file.split('.')[0]}
+        }
+    ));
+    
+		return {
+            paths,
+            fallback: false
+        }
+
+
+    /* const data = await import('../../data/data.json');
 
     const paths = data.categories.map(item => (
         {
@@ -74,5 +102,5 @@ export async function getStaticPaths() {
     return {
         paths,
         fallback: false
-    }
+    } */
 }
