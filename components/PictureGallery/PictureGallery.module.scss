@@ -1,0 +1,34 @@
+@import '../../styles/settings';
+
+.picturesList {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    max-width: 1700px;
+    margin: 0;
+    padding: 0;
+    margin-bottom: 60px;
+    .pictureItem {
+        display: flex;
+        justify-content: center;
+        a {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: auto;
+            width: 90%;
+            max-width: 450px;
+            padding: 0;
+            margin: 10px;
+            .picture {
+                box-shadow: 0 0 5px $mainDarkColor;
+                border: 3px solid white;
+                display: flex;
+                &:hover {
+                    opacity: 0.6;
+                }
+            }
+        }
+    }
+}

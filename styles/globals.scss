@@ -1,0 +1,25 @@
+$mainDarkColor:#47555E;
+$mainLightColor: #E8E9E9;
+$mainFont: 'Open Sans', sans-serif;
+
+html,
+body {
+    padding: 0;
+    margin: 0;
+    font-family: 'Open Sans', sans-serif;
+    background: $mainLightColor;
+}
+
+#__next {
+    position: relative;
+    min-height: calc(100vh - 85px);
+
+}
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+* {
+    box-sizing: border-box;
+}

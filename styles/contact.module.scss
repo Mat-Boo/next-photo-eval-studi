@@ -1,0 +1,90 @@
+@import '../styles/settings';
+
+.contact {
+    display: flex;
+    justify-content: center;
+    margin-top: 85px;
+    .contactForm {
+        position: relative;
+        width: 90%;
+        max-width: 730px;
+        background: lighten($mainDarkColor, 25);
+        box-shadow: 0 0 5px $mainDarkColor;
+        display: flex;
+        flex-direction: column;
+        margin: 40px 0;
+        padding: 20px;
+        color: $mainLightColor;
+        font-family: $mainFont;
+        font-weight: 100;
+        border-radius: 5px;
+        .contactInfos {
+            width: 100%;
+            background: $mainDarkColor;
+            padding: 20px;
+            border-radius: 5px;
+            h2 {
+                text-align: center;
+                font-size: 1.3em;
+            }
+        }
+        label {
+            margin: 30px 0 5px 0;
+        }
+        input, select, textarea {
+            border: none;
+            border-radius: 5px;
+            font-family: $mainFont;
+            font-weight: 100;
+        }
+        input, select {
+            padding: 0 15px;
+            height: 40px;
+            font-size: 1.5em;
+        }
+        textarea {
+            padding: 10px 15px;
+        }
+        button {
+            margin-top: 30px;
+            width: 50%;
+            align-self: center;
+            border: 1px solid $mainDarkColor;
+            padding: 7px;
+            border-radius: 5px;
+            background: $mainDarkColor;
+            color: $mainLightColor;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: $mainFont;
+            font-size: 1.3em;
+            font-weight: 100;
+            cursor: pointer;
+            .send {
+                margin-right: 8px;
+            }
+            &:hover {
+                color: $mainDarkColor;
+                background: $mainLightColor;
+            }
+        }
+        .textPolicy {
+            font-style: italic;
+            font-size: 0.9em;
+            text-align: center;
+            .policyLink {
+                padding: 0 5px;
+                border: 1px solid $mainDarkColor;
+                border-radius: 5px;
+                background: $mainDarkColor;
+                color: $mainLightColor;
+                cursor: pointer;
+                &:hover {
+                    color: $mainDarkColor;
+                    background: $mainLightColor;
+                }
+            }
+        }
+    }
+}

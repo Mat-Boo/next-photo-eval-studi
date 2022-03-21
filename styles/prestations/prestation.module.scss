@@ -1,0 +1,167 @@
+@import '../settings';
+
+.prestation {
+    margin-top: 85px;
+    padding-bottom: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    h2 {
+        text-align: center;
+        font-size: 3em;
+        font-weight: 300;
+        margin: 15px 0;
+        padding: 0;
+        color: $mainDarkColor;
+    }
+    .prestaDescr {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100vw;
+        max-width: 1700px;
+        height: 100%;
+        padding: 10px;
+        .description {
+            background: $mainDarkColor;
+            height: 100%;
+            width: 95%;
+            box-shadow: 0 0 5px $mainDarkColor;
+            border-radius: 10px;
+            padding: 20px;
+            color: $mainLightColor;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            .titleAndDescr {
+                h3 {
+                    text-align: center;
+                }
+                h5 {
+                    font-size: 1.2em;
+                    font-weight: 500;
+                    color: $mainDarkColor;
+                    background: $mainLightColor;
+                    padding: 5px 15px;
+                    border-radius: 3px;
+                }
+                p {
+                    font-weight: 300;
+                }
+            }
+            .silhouette {
+                width: 150px;
+                filter: invert(92%) sepia(5%) saturate(20%) hue-rotate(225deg) brightness(100%) contrast(97%);
+            }
+        }
+        .pictureAndInfos {
+            height: 100%;
+            width: 95%;
+            .picture {
+                border: 5px solid white;
+                display: flex;
+                border-radius: 10px;
+                box-shadow: 0 0 5px $mainDarkColor;
+                margin: 20px 0 20px 0;
+                img {
+                    border-radius: 10px;
+                }
+            }
+            .infos {
+                background: darken($mainLightColor, 15);
+                box-shadow: 0 0 5px $mainDarkColor;
+                border-radius: 10px;
+                padding: 20px;
+                color: darken($mainLightColor, 60);
+                display: flex;
+                flex-direction: column;
+                .titleAndFare {
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    h3 {
+                        text-align: center;
+                    }
+                    .fare {
+                        text-align: center;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        background: $mainDarkColor;
+                        padding: 10px;
+                        border-radius: 5px;
+                        width: 150px;
+                        color: $mainLightColor;
+                        font-weight: 500;
+                        font-size: 1.4em;
+                    }
+                }
+                p {
+                    margin: 20px 0;
+                    font-weight: 300;
+                }
+                .contactBtn {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    text-align: center;
+                    background: $mainDarkColor;
+                    padding: 10px;
+                    width: 80%;
+                    max-width: 300px;
+                    border-radius: 5px;
+                    color: $mainLightColor;
+                    font-weight: 300;
+                    font-size: 1.4em;
+                    align-self: center;
+                    border: 1px solid $mainDarkColor;
+                    &:hover {
+                        background: $mainLightColor;
+                        color: $mainDarkColor;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (min-width:1000px) {
+    .prestation {
+        .prestaDescr {
+            flex-direction: row;
+            align-items: start;
+            .description {
+                min-height: 838px;
+                width: 60%;
+                height: 100%;
+                margin-right: 20px;
+                .titleAndDescr {
+                    h3 {
+                        font-size: 1.5em;
+                        margin: 0 0 24px 0;
+                    }
+                }
+            }
+            .pictureAndInfos {
+                width: 40%;
+                height: 100%;
+                min-height: 838px;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                .picture {
+                    margin: 0 0 20px 0;
+                }
+                .infos {
+                    .titleAndFare {
+                        h3 {
+                            font-size: 1.5em;
+                            margin: 10px 0 10px 0;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

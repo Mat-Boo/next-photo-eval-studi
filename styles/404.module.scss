@@ -1,0 +1,72 @@
+@import './settings';
+
+.page404 {
+    margin-top: 85px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100vw;
+    color: $mainDarkColor;
+    .logo404 {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 50px 0 50px 0;
+        .lense {
+            padding: 0;
+            margin: 0;
+            width: 27%;
+            max-width: 450px;
+        }
+        span {
+            font-size: 28vw;
+            font-weight: 300;
+            margin: 0 7vw;
+        }
+    }
+
+    h2 {
+        font-size: 2.5em;
+        margin: 0;
+        text-align: center;
+        font-weight: 500;
+    }
+    span {
+        font-size: 1.5em;
+        font-weight: 300;
+    }
+    a {
+        background: $mainDarkColor;
+        color: $mainLightColor;
+        padding: 10px;
+        border-radius: 5px;
+        border: solid 1px $mainDarkColor;
+        margin-top: 50px;
+        font-size: 1.5em;
+        font-weight: 300;
+        &:hover {
+            background: $mainLightColor;
+            color: $mainDarkColor;
+        }
+    }
+}
+
+@media screen and (min-width: 1000px) {
+    .page404 {
+        h2 {
+            font-size: 5em;
+        }
+    }
+}
+
+@media screen and (min-width: 1770px) {
+    .page404 {
+        .logo404 {
+
+            span {
+                font-size: 496px;
+                margin: 0 124px;
+            }
+        }
+    }
+}

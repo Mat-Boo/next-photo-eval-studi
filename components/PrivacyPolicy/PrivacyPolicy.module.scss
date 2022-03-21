@@ -1,0 +1,50 @@
+@import '../../styles/settings';
+
+.privacyPolicy {
+    display: none;
+    position: fixed;
+    background: $mainLightColor;
+    top: 85px;
+    bottom: 32px;
+    width: 91%;
+    max-width: 730px;
+    font-family: $mainFont;
+    font-weight: 100;
+    color: darken($mainLightColor, 50);
+    box-shadow: 0 0 15px $mainDarkColor;
+    z-index: 2;
+    margin-left: -20px;
+    border: 2px solid $mainLightColor;
+  
+    .policyHead {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 20px;
+        background: $mainDarkColor;
+        color: $mainLightColor;
+        position: absolute;
+        top: 0;
+        width: 100%;
+        h2 {
+            margin: 0;
+            font-size: 1.1em;
+        }
+        .closePolicy {
+            cursor: pointer;
+        }
+    }
+    .policyText {
+        position: absolute;
+        top: 68px;
+        overflow-y: scroll;
+        padding: 20px;
+        height: calc(100% - 68px);
+        h3 {
+            font-size: 1em;
+        }
+        p{
+            font-size: 0.9em;
+        }
+    }
+}

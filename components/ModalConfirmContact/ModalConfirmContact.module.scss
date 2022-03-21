@@ -1,0 +1,42 @@
+@import '../../styles/settings';
+
+.ModalConfirmContact {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: $mainDarkColor;
+    font-family: $mainFont;
+    font-weight: 100;
+    color: $mainLightColor;
+    box-shadow: 0 0 15px $mainDarkColor;
+    z-index: 3;
+    padding: 20px 20px;
+    border-radius: 5px;
+    width: 85%;
+    max-width: 400px;
+    border: 2px solid $mainLightColor;
+    .headModal {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        h2 {
+            font-size: 1.2em;
+            margin: 0;
+        }
+        .closeModal {
+            cursor: pointer;
+        }
+    }
+    .modalInfos {
+        background: $mainLightColor;
+        border-radius: 5px;
+        color: $mainDarkColor;
+        padding: 15px;
+        margin-top: 10px;
+        p {
+            margin: 0;
+        }
+    }
+}
