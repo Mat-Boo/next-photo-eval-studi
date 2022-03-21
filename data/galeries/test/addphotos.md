@@ -1,6 +1,0 @@
----
-addPictures:
-- "/uploads/imgp6581.jpg"
-- "/uploads/imgp4131.jpg"
-
----
