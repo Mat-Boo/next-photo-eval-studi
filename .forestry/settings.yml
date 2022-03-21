@@ -18,8 +18,8 @@ sections:
   match: "**/*"
   templates:
   - new_prestation
-upload_dir: data/medias
-public_path: "/data/medias"
+upload_dir: public/resources/medias
+public_path: "/public/resources/medias"
 front_matter_path: ''
 use_front_matter_path: false
 file_template: ":filename:"
