@@ -8,4 +8,3 @@ fields:
   label: Ajouter des photos
 pages:
 - data/galeries/portrait/photos.md
-- data/galeries/test/addphotos.md
