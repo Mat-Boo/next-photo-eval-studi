@@ -9,11 +9,15 @@ sections:
   label: Galeries
   create: all
   match: "**/*"
+  templates:
+  - add_pictures
 - type: directory
   path: data/prestations
   label: Prestations
   create: documents
   match: "**/*"
+  templates:
+  - new_prestation
 upload_dir: data/medias
 public_path: "/data/medias"
 front_matter_path: ''
