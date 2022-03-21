@@ -3,7 +3,7 @@ import React from 'react';
 import styles from '../styles/404.module.scss';
 import Image from 'next/image';
 
-export default function page404() {
+export default function Page404() {
   return (
     <div className={styles.page404}>
         <div className={styles.logo404}>

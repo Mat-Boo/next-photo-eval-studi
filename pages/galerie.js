@@ -3,7 +3,7 @@ import CategorySelect from '../components/CategorySelect/CategorySelect';
 import PictureGallery from '../components/PictureGallery/PictureGallery';
 import styles from '../styles/galerie.module.scss';
 
-export default function galerie(props) {
+export default function Galerie(props) {
 
     const [selectedCategory, setSelectedCategory] = useState([]);
     const [displayCancelFilter, setDisplayCancelFilter] = useState(false);
@@ -14,7 +14,7 @@ export default function galerie(props) {
     
     useEffect(() => {
         setSelectedCategory(props.categories)
-    }, [])
+    }, [props.categories])
 
     const handlerCategory = (e) => {
         categoriesListRef.current.childNodes.forEach((item) => {

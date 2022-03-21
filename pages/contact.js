@@ -4,7 +4,7 @@ import PrivacyPolicy from '../components/PrivacyPolicy/PrivacyPolicy';
 import emailjs from '@emailjs/browser';
 import ModalConfirmContact from '../components/ModalConfirmContact/ModalConfirmContact';
 
-export default function contact(props) {
+export default function Contact(props) {
 
     const policyRef = useRef();
     const formRef = useRef();

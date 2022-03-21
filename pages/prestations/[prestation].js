@@ -4,7 +4,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { DataContext } from '../../context/context';
 
-export default function prestation(props) {
+export default function Prestation(props) {
     
    /*  const {data, modifyData } = useContext(DataContext);
     console.log(data)
@@ -26,11 +26,13 @@ export default function prestation(props) {
                         <h5>{props.selectedCategory.prestation.content}</h5>
                         <p>{props.selectedCategory.prestation.description}</p>
                     </div>
-                    <img src={'/resources/silhouette/'+ props.selectedCategory.slug + '.svg'} alt='clipartPresta' className={styles.silhouette}/>
+                    <div  className={styles.silhouette}>
+                        <Image src={'/resources/silhouette/'+ props.selectedCategory.slug + '.svg'} alt='clipartPresta' width='150' height='150'/>
+                    </div>
                 </div>
                 <div className={styles.pictureAndInfos}>
                     <div className={styles.picture}>
-                        <Image src={'/resources/gallery/' + props.selectedCategory.slug + '/' + props.selectedCategory.slug + '-0001.jpg'} width='1920' height='1280'/>
+                        <Image src={'/resources/gallery/' + props.selectedCategory.slug + '/' + props.selectedCategory.slug + '-0001.jpg'} alt={props.selectedCategory.slug + 'Picture'} width='1920' height='1280'/>
                     </div>
                     <div className={styles.infos}>
                         <div className={styles.titleAndFare}>

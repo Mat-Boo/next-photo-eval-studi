@@ -44,8 +44,6 @@ export default function PictureGallery({categories}) {
         }
     }
 
-    console.log(arrayGallery)
-
     return (
         <SRLWrapper options={options}>
             <ul className={styles.picturesList}>

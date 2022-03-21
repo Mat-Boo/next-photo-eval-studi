@@ -3,7 +3,7 @@ import React from 'react'
 import PrestaCard from '../../components/PrestaCard/PrestaCard'
 import styles from '../../styles/prestations/prestations.module.scss'
 
-export default function prestations(props) {
+export default function Prestations(props) {
     return (
         <div className={styles.presta}>
             <ul className={styles.prestaList}>
