@@ -1,4 +1,8 @@
 ---
 label: add_pictures
 hide_body: true
-fields: []
+fields:
+- name: ajouter_des_photos
+  type: image_gallery
+  config: {}
+  label: Ajouter des photos
