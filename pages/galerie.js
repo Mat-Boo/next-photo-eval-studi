@@ -84,8 +84,6 @@ export async function getStaticProps() {
         }
     ));
 
-    console.log(galleries)
-
     return {
         props: {
             galleries
