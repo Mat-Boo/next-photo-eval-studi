@@ -7,7 +7,7 @@ sections:
 - type: directory
   path: data/galeries
   label: Galeries
-  create: all
+  create: documents
   match: "**/*"
   templates:
   - add_pictures

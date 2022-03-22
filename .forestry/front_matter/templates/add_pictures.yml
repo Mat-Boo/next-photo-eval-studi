@@ -1,7 +1,12 @@
 ---
-label: add_pictures
+label: add_gallery
 hide_body: true
 fields:
+- name: category
+  type: text
+  config:
+    required: false
+  label: Catégorie
 - name: addPictures
   type: image_gallery
   config: {}
