@@ -3,6 +3,8 @@ import styles from '../styles/contact.module.scss';
 import PrivacyPolicy from '../components/PrivacyPolicy/PrivacyPolicy';
 import emailjs from '@emailjs/browser';
 import ModalConfirmContact from '../components/ModalConfirmContact/ModalConfirmContact';
+import fs from 'fs';
+import matter from 'gray-matter';
 
 export default function Contact(props) {
 
@@ -57,9 +59,8 @@ export default function Contact(props) {
                 <select ref={formItem} name="presta" id="presta">
                     <option value="">- Choisissez une option -</option>
                     {
-                        props.categories.map((category) => (
-                            category.slug==='bapteme' ? null :
-                            <option key={category.slug} value={category.slug}>{category.prestation.title}</option>
+                        props.prestations.map((prestation) => (
+                            <option key={prestation.file} value={prestation.file}>{prestation.data.title}</option>
                         ))
                     }
                     <option value="other">Autre</option>
@@ -86,12 +87,18 @@ export default function Contact(props) {
 
 export async function getStaticProps() {
 
-    const data = await import('../data/data.json');
-    const categories = data.categories;
+    const files = fs.readdirSync('data/prestations/', "utf-8");
+
+    const prestations = files.map(file =>  (
+        {
+            file: file.split('.')[0],
+            data: matter(fs.readFileSync(`./data/prestations/${file}`, 'utf-8')).data
+        }
+    ));
 
     return {
         props: {
-            categories
+            prestations
         }
     }
 }

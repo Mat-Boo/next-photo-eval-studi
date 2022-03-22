@@ -63,7 +63,7 @@ export default function Gallery(props) {
                 {
                     selectedGallery.map((gallery) => {
                         return (
-                            <li>
+                            <li key={gallery.file}>
                                 <PictureGallery gallery={gallery} />
                             </li>
                         )

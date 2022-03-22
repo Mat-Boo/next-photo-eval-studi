@@ -6,7 +6,7 @@ import fs from 'fs';
 import matter from 'gray-matter'
 
 export default function Prestations(props) {
-    console.log(props)
+
     return (
         <div className={styles.presta}>
             <ul className={styles.prestaList}>
