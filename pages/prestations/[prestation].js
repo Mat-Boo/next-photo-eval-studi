@@ -62,16 +62,6 @@ export async function getStaticProps(context) {
 			data
         }
     }
-
-    /* const slug = context.params.prestation;
-    const data = await import('../../data/data.json');
-    const selectedCategory = data.categories.find(category => category.prestation.slugPresta === slug);
-
-    return {
-        props: {
-            selectedCategory
-        }
-    } */
 }
 
 export async function getStaticPaths() {
@@ -89,18 +79,4 @@ export async function getStaticPaths() {
             paths,
             fallback: false
         }
-
-
-    /* const data = await import('../../data/data.json');
-
-    const paths = data.categories.map(item => (
-        {
-            params: {prestation: item.prestation.slugPresta}
-        }
-    ))
-
-    return {
-        paths,
-        fallback: false
-    } */
 }

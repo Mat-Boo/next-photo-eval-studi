@@ -12,7 +12,6 @@ export default function Prestations(props) {
             <ul className={styles.prestaList}>
                 {
                     props.prestations.map((prestation) => (
-                        /* prestation.slug==='bapteme' ? null : */
                         <li key={prestation.file}>
                             <Link href={'/prestations/' + prestation.file}>
                             <a>
@@ -35,7 +34,6 @@ export default function Prestations(props) {
 export async function getStaticProps() {
 
     const files = fs.readdirSync('data/prestations/', "utf-8");
-    const test = [];
 
     const prestations = files.map(file =>  (
         {
@@ -49,13 +47,4 @@ export async function getStaticProps() {
             prestations
         }
     }
-
-    /* const data = await import('../../data/data.json');
-    const categories = data.categories;
-
-    return {
-        props: {
-            categories
-        }
-    } */
 }

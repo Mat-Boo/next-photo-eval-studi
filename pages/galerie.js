@@ -2,10 +2,12 @@ import React, { useEffect, useRef, useState } from 'react';
 import CategorySelect from '../components/CategorySelect/CategorySelect';
 import PictureGallery from '../components/PictureGallery/PictureGallery';
 import styles from '../styles/galerie.module.scss';
+import fs from 'fs';
+import matter from 'gray-matter';
 
-export default function Galerie(props) {
+export default function Gallery(props) {
 
-    const [selectedCategory, setSelectedCategory] = useState([]);
+    const [selectedGallery, setSelectedGallery] = useState([]);
     const [displayCancelFilter, setDisplayCancelFilter] = useState(false);
 
     const categoriesListRef = useRef();  
@@ -13,8 +15,8 @@ export default function Galerie(props) {
     const cancelBtnRef = useRef()
     
     useEffect(() => {
-        setSelectedCategory(props.categories)
-    }, [props.categories])
+        setSelectedGallery(props.galleries)
+    }, [props.galleries])
 
     const handlerCategory = (e) => {
         categoriesListRef.current.childNodes.forEach((item) => {
@@ -24,52 +26,69 @@ export default function Galerie(props) {
         e.target.style.background='#47555E';
         e.target.style.color='#E8E9E9';
         setDisplayCancelFilter(true);
-        props.categories.forEach((category) => {
-            if (category.slug === e.target.id) {
-                setSelectedCategory([]);
-                setSelectedCategory(selectedCategory => [...selectedCategory, category]);
+        props.galleries.forEach((gallery) => {
+            if (gallery.file === e.target.id) {
+                setSelectedGallery([]);
+                setSelectedGallery(selectedGallery => [...selectedGallery, gallery]);
             }
         })
     }
 
-    const handlerAllCategory = () => {
+    const handlerAllCategories = () => {
         categoriesListRef.current.childNodes.forEach((item) => {
             item.childNodes[0].style.background='#E8E9E9';
             item.childNodes[0].style.color='#47555E';
         })
         setDisplayCancelFilter(false);
-        setSelectedCategory(props.categories);
+        setSelectedGallery(props.galleries);
     }
    
     return (
         <div className={styles.gallery}>
             <ul ref={categoriesListRef} className={styles.categoriesList}>
                 {
-                    props.categories.map((category) => (
-                        <li key={category.slug}>
-                            <CategorySelect handlerCategory={handlerCategory} categorySlug={category.slug} categoryName={category.name}/>
+                    props.galleries.map((gallery) => (
+                        <li key={gallery.file}>
+                            <CategorySelect handlerCategory={handlerCategory} categoryId={gallery.file} categoryName={gallery.data.category}/>
                         </li>
                     ))
                 }
             </ul>
             {
                 displayCancelFilter && (
-                    <span ref={cancelBtnRef} onClick={() => handlerAllCategory()} className={styles.allCategory}>Annuler le filtre</span>
+                    <span ref={cancelBtnRef} onClick={() => handlerAllCategories()} className={styles.allCategories}>Annuler le filtre</span>
                 )
             }
-            <PictureGallery categories={selectedCategory} />
+            <ul className={styles.galleriesList}>
+                {
+                    selectedGallery.map((gallery) => {
+                        return (
+                            <li>
+                                <PictureGallery gallery={gallery} />
+                            </li>
+                        )
+                    })
+                }
+            </ul>
         </div>
     )
 }
 
 export async function getStaticProps() {
 
-    const data = await import('../data/data.json');
-    const categories = data.categories;
+    const files = fs.readdirSync('data/galleries/', 'utf-8');
+    const galleries = files.map(file =>  (
+        {
+            file: file.split('.')[0],
+            data: matter(fs.readFileSync(`./data/galleries/${file}`, 'utf-8')).data
+        }
+    ));
+
+    console.log(galleries)
 
     return {
         props: {
-            categories
+            galleries
         }
     }
 }
