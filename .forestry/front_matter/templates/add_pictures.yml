@@ -7,7 +7,7 @@ fields:
   config:
     required: false
   label: Catégorie
-- name: addPictures
+- name: pictures
   type: image_gallery
   config: {}
   label: Ajouter des photos
