@@ -98,7 +98,7 @@ export default function Contact(props) {
                     <textarea ref={formItem} name="message" id='message' rows="12" required></textarea>
                     <div className={styles.recaptcha}>
                         <ReCAPTCHA
-                            sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY}
+                            sitekey='6Lf7PAUfAAAAACN-kxvTaWnxPveeEJL_soCjT4i0'
                             onChange={onReCAPTCHAChange}
                             ref={recaptchaRef}
                         />
