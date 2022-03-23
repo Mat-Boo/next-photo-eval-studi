@@ -20,14 +20,14 @@ export default function PrivacyPolicy() {
             <div className={styles.policyText}>
                     <p>Cette politique de confidentialité a pour objectif de vous informer sur mes politiques et pratiques concernant la collecte, l'utilisation et la divulgation de toute information que vous soumettez via mon site internet ou fotostudio.io (plateforme de gestion spécialisée pour les photographes professionnels).</p>
                     <h3>Responsabilité pour le traitement des données</h3>
-                    <p>Charles Cantin Photographe, Charles Cantin, 15 rue de là-bas, 62000 Arras, France, SIREN: 123 456 789, SIRET: 12345678900012,  est responsable du traitement de vos données collectées sur son site Internet www.charlescantin.fr (formulaire de contact, questionnaire et signature de contrat).</p>
+                    <p>Charles Cantin Photographe, Charles Cantin, 15 rue de là-bas, 62000 Arras, France, SIREN: 123 456 789, SIRET: 12345678900012,  est responsable du traitement de vos données collectées sur son site Internet <b><a href="https://c-cantin-photo.netlify.app/">https://c-cantin-photo.netlify.app/</a></b> (formulaire de contact, questionnaire et signature de contrat).</p>
                     <h3>Finalités des données</h3>
                     <p>Les données que vous me communiquez ne seront utilisées que pour la bonne gestion de notre relation client-prestataire (organisation de votre séance, remise de devis, facture, ...). Elles ne sont enregistrées que dans ce but.</p>
                     <p>Je collecte également les informations que vous me fournissez dans vos emails ou de vive voix. Ces informations sont collectées pour m'aider à fournir un service de qualité selon vos attentes.</p>
                     <h3> Formulaire de contact</h3>
                     <p>Lorsque vous soumettez une demande de contact depuis mon site internet, je collecte vos données telles que votre nom et prénom, votre adresse e-mail et les informations précisées dans le message.</p>
                     <h3>Signature d'un contrat</h3>
-                    <p>Il vous sera demandé de signer un contrat pour valider votre commande soit de manière manuscrite soit via fotostudio.io. Ce contrat reprendra vos données personnelles ainsi que les informations relatives à la prestation (date et lieu de la séance, tarif, ...).</p>
+                    <p>Il vous sera demandé de signer un contrat pour valider votre commande. Ce contrat reprendra vos données personnelles ainsi que les informations relatives à la prestation (date et lieu de la séance, tarif, ...).</p>
                     <h3>Questionnaire</h3>
                     <p>Je vous soumets des questionnaires pour m'aider à mieux comprendre vos attentes et ainsi réaliser une prestation qui répond à vos attentes. Vous n'êtes nullement obligé de répondre à toutes les questions si vous souhaitez éviter de fournir certaines informations.</p>
                     <h3>Divulgation de vos données</h3>
