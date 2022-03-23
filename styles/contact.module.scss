@@ -71,6 +71,14 @@
                 background: $mainLightColor;
             }
         }
+        .disabledBtn {
+            opacity: 0.3;
+            cursor: default;
+            &:hover {
+                color: $mainLightColor;
+                background: $mainDarkColor;
+            }
+        }
         .textPolicy {
             font-style: italic;
             font-size: 0.9em;
@@ -81,7 +89,7 @@
                 border-radius: 5px;
                 background: $mainDarkColor;
                 color: $mainLightColor;
-                cursor: pointer;
+                cursor: auto ;
                 &:hover {
                     color: $mainDarkColor;
                     background: $mainLightColor;
