@@ -10,14 +10,14 @@ import Head from 'next/head';
 import ReCAPTCHA from 'react-google-recaptcha';
 
 export default function Contact(props) {
+    
+    console.log(process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY)
 
     const [selectedPrestation, setSelectedPrestation] = useState('')
     const reduxPresta = useSelector((state) => state.presta)
 
     const [verifiedCaptcha, setVerifiedCaptcha] = useState(false)
     const recaptchaRef = useRef()
-
-    console.log(recaptchaRef)
 
     useEffect(() => {
         setSelectedPrestation(reduxPresta)
@@ -98,7 +98,7 @@ export default function Contact(props) {
                     <textarea ref={formItem} name="message" id='message' rows="12" required></textarea>
                     <div className={styles.recaptcha}>
                         <ReCAPTCHA
-                            sitekey='6Lf7PAUfAAAAACN-kxvTaWnxPveeEJL_soCjT4i0'
+                            sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY}
                             onChange={onReCAPTCHAChange}
                             ref={recaptchaRef}
                         />
