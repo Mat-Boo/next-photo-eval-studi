@@ -1,12 +1,20 @@
-import React, { useRef } from 'react';
+import React, { useRef, useState, useEffect } from 'react';
 import styles from '../styles/contact.module.scss';
 import PrivacyPolicy from '../components/PrivacyPolicy/PrivacyPolicy';
 import emailjs from '@emailjs/browser';
 import ModalConfirmContact from '../components/ModalConfirmContact/ModalConfirmContact';
 import fs from 'fs';
 import matter from 'gray-matter';
+import { useSelector } from 'react-redux';
 
 export default function Contact(props) {
+
+    const [selectedPrestation, setSelectedPrestation] = useState('')
+    const reduxPresta = useSelector((state) => state.presta)
+
+    useEffect(() => {
+        setSelectedPrestation(reduxPresta)
+    }, [reduxPresta])
 
     const policyRef = useRef();
     const formRef = useRef();
@@ -50,13 +58,13 @@ export default function Contact(props) {
                     </p>
                 </div>
                 <label htmlFor='firstname'>Votre prénom <span style={{color: 'red'}}>*</span></label>
-                <input ref={formItem} type="text" name="firstname" id='firstname' required/>
+                <input ref={formItem} type="text" name="firstname" id='firstname' required autoFocus/>
                 <label htmlFor='lastname'>Votre nom <span style={{color: 'red'}}>*</span></label>
                 <input ref={formItem} type="text" name="lastname" id='lastname' required/>
                 <label htmlFor='email'>Votre adresse email <span style={{color: 'red'}}>*</span></label>
                 <input ref={formItem} type="email" name="email" id='email' required/>
                 <label htmlFor='presta'>Quelle prestation vous intéresse ? <span style={{color: 'red'}}>*</span></label>
-                <select ref={formItem} name="presta" id="presta">
+                <select ref={formItem} name="presta" id="presta" value={selectedPrestation} onChange={e => setSelectedPrestation(e.target.value)}>
                     <option value="">- Choisissez une option -</option>
                     {
                         props.prestations.map((prestation) => (
@@ -65,7 +73,7 @@ export default function Contact(props) {
                     }
                     <option value="other">Autre</option>
                 </select>
-                <label htmlFor='message'>Parlez-moi de l'expérience photo dont vous rêvez : <span style={{color: 'red'}}>*</span></label>
+                <label htmlFor='message'>Parlez-moi de l'expérience photo dont vous rêvez : <span style={{color:'red'}}>*</span></label>
                 <textarea ref={formItem} name="message" id='message' rows="12" required></textarea>
                 <button role='submit'>
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className={styles.send} viewBox="0 0 16 16">

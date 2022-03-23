@@ -1,7 +1,3 @@
-$mainDarkColor:#47555E;
-$mainLightColor: #E8E9E9;
-$mainFont: 'Open Sans', sans-serif;
-
 html,
 body {
     padding: 0;
@@ -13,7 +9,6 @@ body {
 #__next {
     position: relative;
     min-height: calc(100vh - 85px);
-
 }
 a {
     color: inherit;

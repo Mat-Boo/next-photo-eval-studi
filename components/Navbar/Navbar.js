@@ -3,21 +3,34 @@ import Link from 'next/link';
 import styles from './Navbar.module.scss';
 import ActiveLink from '../ActiveLink/ActiveLink';
 import Image from 'next/image';
+import { useDispatch } from 'react-redux';
+import { updatePresta } from '../../redux/redux';
 
 export default function Navbar() {
 
     const [miniMenu, setMiniMenu] = useState(false);
-    const menuRef = useRef()
+    const menuRef = useRef();
+    const socialRef = useRef();
+
+    const dispatch = useDispatch();
 
     const displayMiniMenu = () => {
             setMiniMenu(true)
             menuRef.current.style.left=0;
             menuRef.current.style.transition='left 500ms linear';
+            socialRef.current.style.left=0;
+            socialRef.current.style.transition='left 500ms linear';
     }
 
     const hideMiniMenu = (e) => {
         setMiniMenu(false)
         menuRef.current.style.left='-100vw';
+        socialRef.current.style.left='-100vw';
+        if (e !== undefined) {
+            if (e.target.innerText === 'CONTACT') {
+                dispatch(updatePresta(''))
+            }
+        }
     }
 
     return (
@@ -34,8 +47,8 @@ export default function Navbar() {
                 <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"/>
             </svg>
             }
-            <div ref={menuRef} className= {styles.menuAndSocial}>
-                <div className={styles.menu}>
+            {/* <div ref={menuRef} className= {styles.menuAndSocial}> */}
+                <div ref={menuRef} className={styles.menu}>
                     <ActiveLink href='/'>
                         <div onClick={(e) => hideMiniMenu(e)}>
                                 ACCUEIL
@@ -57,7 +70,7 @@ export default function Navbar() {
                         </div>
                     </ActiveLink>
                 </div>
-                <div className={styles.social}>
+                <div ref={socialRef} className={styles.social}>
                     <a onClick={() => hideMiniMenu()} href='https://www.facebook.com/' target='_blank' rel="noreferrer">
                         <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" className={styles.socialItem} viewBox="0 0 16 16">
                             <path d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z"/>
@@ -70,7 +83,7 @@ export default function Navbar() {
                     </a>
                 </div>
 
-            </div>
+            {/* </div> */}
         </nav>
     )
 }

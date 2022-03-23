@@ -15,7 +15,17 @@ const ActiveLink = ({ router, href, children }) => {
         router.push(href);
     }
 
-    const isCurrentPath = router.pathname === href || router.asPath === href;
+    let pathnameTemp = '';
+    let asPathTemp = '';
+
+    if (router.pathname === '/prestations/[prestation]') {
+        pathnameTemp = asPathTemp = '/prestations';
+    } else {
+        pathnameTemp = router.pathname;
+        asPathTemp = router.asPath;
+    }
+
+    const isCurrentPath = pathnameTemp === href || asPathTemp=== href;
 
     return (
         <a href={href} onClick={handleClick} className={styles.menuItem}

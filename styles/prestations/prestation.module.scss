@@ -1,11 +1,10 @@
-@import '../settings';
-
 .prestation {
     margin-top: 85px;
     padding-bottom: 40px;
     display: flex;
     flex-direction: column;
     align-items: center;
+    width: 100vw;
     h2 {
         text-align: center;
         font-size: 3em;
@@ -15,20 +14,26 @@
         color: $mainDarkColor;
     }
     .prestaDescr {
-        display: flex;
-        flex-direction: column;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-areas: 
+        "picture"
+        "description"
+        "infos";
+        justify-items: center;
         align-items: center;
-        width: 100vw;
+        width: 100%;
         max-width: 1700px;
-        height: 100%;
         padding: 10px;
         .description {
+            grid-area: description;
             background: $mainDarkColor;
             height: 100%;
-            width: 95%;
+            width: 100%;
             box-shadow: 0 0 5px $mainDarkColor;
             border-radius: 10px;
             padding: 20px;
+            margin: 20px 0;
             color: $mainLightColor;
             display: flex;
             flex-direction: column;
@@ -52,75 +57,78 @@
                 }
             }
             .silhouette {
-                width: 150px;
+                width: 100%;
+                max-width: 150px;
                 filter: invert(92%) sepia(5%) saturate(20%) hue-rotate(225deg) brightness(100%) contrast(97%);
             }
         }
-        .pictureAndInfos {
-            height: 100%;
-            width: 95%;
-            .picture {
-                border: 5px solid white;
-                display: flex;
+        .picture {
+            grid-area: picture;
+            border: 5px solid white;
+            display: flex;
+            border-radius: 10px;
+            box-shadow: 0 0 5px $mainDarkColor;
+            width: 100%;
+            margin: 20px 0;
+            img {
                 border-radius: 10px;
-                box-shadow: 0 0 5px $mainDarkColor;
-                margin: 20px 0 20px 0;
-                img {
-                    border-radius: 10px;
-                }
+                object-fit: cover;
             }
-            .infos {
-                background: darken($mainLightColor, 15);
-                box-shadow: 0 0 5px $mainDarkColor;
-                border-radius: 10px;
-                padding: 20px;
-                color: darken($mainLightColor, 60);
+        }
+        .infos {
+            margin: 20px 0;
+            grid-area: infos;
+            width: 100%;
+            background: darken($mainLightColor, 15);
+            box-shadow: 0 0 5px $mainDarkColor;
+            border-radius: 10px;
+            padding: 20px;
+            color: darken($mainLightColor, 60);
+            display: flex;
+            flex-direction: column;
+            .titleAndFare {
                 display: flex;
-                flex-direction: column;
-                .titleAndFare {
-                    display: flex;
-                    justify-content: space-between;
-                    align-items: center;
-                    h3 {
-                        text-align: center;
-                    }
-                    .fare {
-                        text-align: center;
-                        display: flex;
-                        align-items: center;
-                        justify-content: center;
-                        background: $mainDarkColor;
-                        padding: 10px;
-                        border-radius: 5px;
-                        width: 150px;
-                        color: $mainLightColor;
-                        font-weight: 500;
-                        font-size: 1.4em;
-                    }
+                justify-content: space-between;
+                align-items: center;
+                h3 {
+                    text-align: center;
                 }
-                p {
-                    margin: 20px 0;
-                    font-weight: 300;
-                }
-                .contactBtn {
+                .fare {
+                    text-align: center;
                     display: flex;
                     align-items: center;
                     justify-content: center;
-                    text-align: center;
                     background: $mainDarkColor;
                     padding: 10px;
-                    width: 80%;
-                    max-width: 300px;
                     border-radius: 5px;
+                    width: 150px;
                     color: $mainLightColor;
-                    font-weight: 300;
+                    font-weight: 500;
                     font-size: 1.4em;
-                    align-self: center;
-                    border: 1px solid $mainDarkColor;
-                    &:hover {
-                        background: $mainLightColor;
-                        color: $mainDarkColor;
-                    }
+                }
+            }
+            p {
+                margin: 20px 0;
+                font-weight: 300;
+            }
+            .contactBtn {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                text-align: center;
+                background: $mainDarkColor;
+                padding: 10px;
+                width: 80%;
+                max-width: 300px;
+                border-radius: 5px;
+                color: $mainLightColor;
+                font-weight: 300;
+                font-size: 1.4em;
+                align-self: center;
+                border: 1px solid $mainDarkColor;
+                &:hover {
+                    background: $mainLightColor;
+                    color: $mainDarkColor;
                 }
             }
         }
@@ -130,13 +138,18 @@
 @media screen and (min-width:1000px) {
     .prestation {
         .prestaDescr {
-            flex-direction: row;
-            align-items: start;
+            grid-template-columns: 3fr 2fr;
+            grid-template-rows: 3fr 2fr;
+            grid-template-areas: 
+            "description picture"
+            "description infos";
+            align-items: stretch;
+            padding: 0 40px;
             .description {
                 min-height: 838px;
-                width: 60%;
+                width: 100%;
                 height: 100%;
-                margin-right: 20px;
+                margin: 0 20px 0 0;
                 .titleAndDescr {
                     h3 {
                         font-size: 1.5em;
@@ -144,24 +157,27 @@
                     }
                 }
             }
-            .pictureAndInfos {
-                width: 40%;
-                height: 100%;
-                min-height: 838px;
-                display: flex;
-                flex-direction: column;
-                justify-content: space-between;
-                .picture {
-                    margin: 0 0 20px 0;
-                }
-                .infos {
-                    .titleAndFare {
-                        h3 {
-                            font-size: 1.5em;
-                            margin: 10px 0 10px 0;
-                        }
+            .picture {
+                margin: 0 0 20px 0;
+            }
+            .infos {
+                margin: 0;
+                .titleAndFare {
+                    h3 {
+                        font-size: 1.5em;
+                        margin: 10px 0 10px 0;
                     }
                 }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 375px) {
+    .prestation {
+        .infos {
+            .titleAndFare {
+                flex-direction: column;
             }
         }
     }

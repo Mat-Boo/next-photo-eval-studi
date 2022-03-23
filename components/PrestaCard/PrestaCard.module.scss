@@ -1,5 +1,3 @@
-@import '../../styles/settings';
-
 .prestaCard {
     display: flex;
     flex-direction: column;
@@ -24,7 +22,7 @@
         box-shadow: 0 0 5px $mainDarkColor;
         background: darken($mainLightColor, 20);
         width: 100%;
-        height: 130px;
+        min-height: 130px;
         border-radius: 5px;
         padding: 10px;
         color: darken($mainLightColor, 70);
@@ -34,7 +32,7 @@
             align-items: center;
             .title {
                 margin: 0;
-        
+                text-align: center;
             }
             .fare {
                 background: $mainDarkColor;
@@ -49,6 +47,20 @@
             font-size: 0.8em;
             margin: 15px 0 5px 0;
     
+        }
+    }
+}
+
+@media screen and (max-width: 386px) {
+    .prestaCard {
+        margin-bottom: 30px;
+        .prestaInfos {
+            .titleFare {
+                flex-direction: column;
+                .title {
+                    margin-bottom: 15px;
+                }
+            }
         }
     }
 }
