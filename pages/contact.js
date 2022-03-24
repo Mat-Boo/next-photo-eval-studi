@@ -10,8 +10,6 @@ import Head from 'next/head';
 import ReCAPTCHA from 'react-google-recaptcha';
 
 export default function Contact(props) {
-    
-    console.log(process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY)
 
     const [selectedPrestation, setSelectedPrestation] = useState('')
     const reduxPresta = useSelector((state) => state.presta)
@@ -19,14 +17,15 @@ export default function Contact(props) {
     const [verifiedCaptcha, setVerifiedCaptcha] = useState(false)
     const recaptchaRef = useRef()
 
+    const policyRef = useRef();
+    const formRef = useRef();
+    const firstnameRef = useRef();
+    const modalRef = useRef();
+
     useEffect(() => {
         setSelectedPrestation(reduxPresta)
     }, [reduxPresta])
 
-    const policyRef = useRef();
-    const formRef = useRef();
-    const formItem = useRef();
-    const modalRef = useRef();
 
     const displayPolicy = () => {
         policyRef.current.childNodes[0].style.display = 'block';
@@ -40,7 +39,7 @@ export default function Contact(props) {
 
     const sendEmail = (e) => {
         e.preventDefault();
-        emailjs.sendForm('service_cckovgi', 'template_iopljzj', formRef.current, '3sul1bwAg788hRlkj')
+        emailjs.sendForm(process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID, process.env.NEXT_PUBLIC_EMAILJS_EMAIL_TEMPLATE, formRef.current, process.env.NEXT_PUBLIC_EMAILJS_USER_ID)
           .then((result) => {
               console.log(result.text);
           }, (error) => {
@@ -52,11 +51,14 @@ export default function Contact(props) {
           formRef.current.style.opacity = '0.3';
         recaptchaRef.current.reset();
         onReCAPTCHAChange();
+        setSelectedPrestation('');
     };
 
     const onReCAPTCHAChange = (captchaCode) => {
         setVerifiedCaptcha(!verifiedCaptcha)
     }
+
+    console.log(firstnameRef)
         
     return (
         <>
@@ -79,13 +81,13 @@ export default function Contact(props) {
                         </p>
                     </div>
                     <label htmlFor='firstname'>Votre prénom <span style={{color: 'red'}}>*</span></label>
-                    <input ref={formItem} type="text" name="firstname" id='firstname' required autoFocus/>
+                    <input ref={firstnameRef} type="text" name="firstname" id='firstname' required autoFocus/>
                     <label htmlFor='lastname'>Votre nom <span style={{color: 'red'}}>*</span></label>
-                    <input ref={formItem} type="text" name="lastname" id='lastname' required/>
+                    <input type="text" name="lastname" id='lastname' required/>
                     <label htmlFor='email'>Votre adresse email <span style={{color: 'red'}}>*</span></label>
-                    <input ref={formItem} type="email" name="email" id='email' required/>
+                    <input type="email" name="email" id='email' required/>
                     <label htmlFor='presta'>Quelle prestation vous intéresse ? <span style={{color: 'red'}}>*</span></label>
-                    <select ref={formItem} name="presta" id="presta" value={selectedPrestation} onChange={e => setSelectedPrestation(e.target.value)}>
+                    <select name="presta" id="presta" value={selectedPrestation} onChange={e => setSelectedPrestation(e.target.value)}>
                         <option value="">- Choisissez une option -</option>
                         {
                             props.prestations.map((prestation) => (
@@ -95,7 +97,7 @@ export default function Contact(props) {
                         <option value="other">Autre</option>
                     </select>
                     <label htmlFor='message'>Parlez-moi de l'expérience photo dont vous rêvez : <span style={{color:'red'}}>*</span></label>
-                    <textarea ref={formItem} name="message" id='message' rows="12" required></textarea>
+                    <textarea name="message" id='message' rows="12" required></textarea>
                     <div className={styles.recaptcha}>
                         <ReCAPTCHA
                             sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY}
