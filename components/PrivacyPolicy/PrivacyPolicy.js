@@ -1,5 +1,5 @@
-import React, { useRef } from 'react'
-import styles from './PrivacyPolicy.module.scss'
+import React, { useRef } from 'react';
+import styles from './PrivacyPolicy.module.scss';
 
 export default function PrivacyPolicy() {
 

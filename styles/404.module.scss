@@ -22,8 +22,7 @@
             margin: 0 7vw;
         }
     }
-
-    h2 {
+    h1 {
         font-size: 2.5em;
         margin: 0;
         text-align: center;
@@ -51,7 +50,7 @@
 
 @media screen and (min-width: 1000px) {
     .page404 {
-        h2 {
+        h1 {
             font-size: 5em;
         }
     }
@@ -60,7 +59,6 @@
 @media screen and (min-width: 1770px) {
     .page404 {
         .logo404 {
-
             span {
                 font-size: 496px;
                 margin: 0 124px;

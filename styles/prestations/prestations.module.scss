@@ -1,14 +1,23 @@
 .presta {
     display: flex;
+    flex-direction: column;
     justify-content: center;
+    align-items: center;
     margin-top: 85px;
+    h1 {
+        font-weight: 100;
+        font-size: 2.9em;
+        margin: 30px 5px 15px 5px;
+        color: $mainDarkColor;
+        text-align: center;
+    }
     .prestaList {
         list-style: none;
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
         max-width: 1700px;
-        margin: 40px 0;
+        margin: 15px 0;
         padding: 0;
         li {
             display: flex;
@@ -17,6 +26,14 @@
                 display: flex;
                 justify-content: center;
             }
+        }
+    }
+}
+
+@media screen and (min-width: 1000px) {
+    .presta {
+        h1 {
+            font-size: 3.2em;
         }
     }
 }

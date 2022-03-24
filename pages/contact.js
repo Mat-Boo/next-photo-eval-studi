@@ -58,18 +58,30 @@ export default function Contact(props) {
         setVerifiedCaptcha(!verifiedCaptcha)
     }
 
-    console.log(firstnameRef)
-        
     return (
         <>
             <Head>
                 <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
                 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-                <title>Charles Cantin - Photographe</title>
-                <meta name="description" content="Photographe professionnel, spécialisé en portrait. Shooting en studio, reportage naturel en extérieur ou à domicile, mariage, photo d'entreprise." />
+                <title>CONTACT | Charles Cantin - Photographe</title>
+                <meta name="description" content="Photographe professionnel, besoin de plus d'information, utilisez mon formulaire de contact et je répondrais le plus rapidement possible." />
                 <link rel="icon" href="/favicon.ico" />
+                {/* Open Graph meta for Facebook */}
+                <meta property="og:title" content="CONTACT | Charles Cantin - Photographe" />
+                <meta property="og:url" content="https://c-cantin-photo.netlify.app/" />
+                <meta property="og:image" content="https://c-cantin-photo.netlify.app/resources/homeOg.png" />
+                <meta property="og:description" content="Photographe professionnel, besoin de plus d'information, utilisez mon formulaire de contact et je répondrais le plus rapidement possible." />
+                <meta property="og:site_name" content="Charles Cantin - Photographe" />
+                <meta property="og:type" content="website" />
+                {/* Card meta for Twitter */}
+                <meta name="twitter:card" content="summary_large_image" />
+                <meta name="twitter:site" content="@ccantin_photo" />
+                <meta name="twitter:title" content="CONTACT | Charles Cantin - Photographe" />
+                <meta name="twitter:description" content="Photographe professionnel, besoin de plus d'information, utilisez mon formulaire de contact et je répondrais le plus rapidement possible." />
+                <meta name="twitter:image:src" content="https://c-cantin-photo.netlify.app/resources/homeOg.png" />
             </Head>
             <div id='contact' className={styles.contact} onClick={(e) => hidePolicy(e)} onSubmit={sendEmail}>
+                <h1>CONTACTEZ MOI</h1>
                 <form ref={formRef} id="contact-form" className={styles.contactForm}>
                     <div className={styles.contactInfos}>
                         <h2>- PARLEZ-MOI DE L' EXPÉRIENCE PHOTO DE VOS RÊVES -</h2>
@@ -81,7 +93,7 @@ export default function Contact(props) {
                         </p>
                     </div>
                     <label htmlFor='firstname'>Votre prénom <span style={{color: 'red'}}>*</span></label>
-                    <input ref={firstnameRef} type="text" name="firstname" id='firstname' required autoFocus/>
+                    <input ref={firstnameRef} type="text" name="firstname" id='firstname' required/>
                     <label htmlFor='lastname'>Votre nom <span style={{color: 'red'}}>*</span></label>
                     <input type="text" name="lastname" id='lastname' required/>
                     <label htmlFor='email'>Votre adresse email <span style={{color: 'red'}}>*</span></label>

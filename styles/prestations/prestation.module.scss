@@ -5,11 +5,11 @@
     flex-direction: column;
     align-items: center;
     width: 100vw;
-    h2 {
+    h1 {
         text-align: center;
-        font-size: 3em;
+        font-size: 2.9em;
         font-weight: 300;
-        margin: 15px 0;
+        margin: 30px 5px 15px 5px;
         padding: 0;
         color: $mainDarkColor;
     }
@@ -137,6 +137,9 @@
 
 @media screen and (min-width:1000px) {
     .prestation {
+        h1 {
+            font-size: 3.2em;
+        }
         .prestaDescr {
             grid-template-columns: 3fr 2fr;
             grid-template-rows: 3fr 2fr;
@@ -144,7 +147,7 @@
             "description picture"
             "description infos";
             align-items: stretch;
-            padding: 0 40px;
+            padding: 15px 40px;
             .description {
                 min-height: 838px;
                 width: 100%;

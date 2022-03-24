@@ -1,8 +1,18 @@
 .contact {
     display: flex;
+    flex-direction: column;
     justify-content: center;
+    align-items: center;
     margin-top: 85px;
     padding-bottom: 40px;
+    h1 {
+        text-align: center;
+        font-size: 2.9em;
+        font-weight: 300;
+        margin: 30px 5px 15px 5px;
+        padding: 0;
+        color: $mainDarkColor;
+    }
     .contactForm {
         position: relative;
         width: 90%;
@@ -11,7 +21,7 @@
         box-shadow: 0 0 5px $mainDarkColor;
         display: flex;
         flex-direction: column;
-        margin: 40px 0;
+        margin: 15px 0;
         padding: 20px;
         color: $mainLightColor;
         font-family: $mainFont;
@@ -96,6 +106,14 @@
                     background: $mainLightColor;
                 }
             }
+        }
+    }
+}
+
+@media screen and (min-width: 1000px) {
+    .contact {
+        h1 {
+            font-size: 3.2em;
         }
     }
 }
