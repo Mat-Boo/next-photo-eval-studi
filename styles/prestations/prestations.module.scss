@@ -10,8 +10,10 @@
         margin: 30px 5px 15px 5px;
         color: $mainDarkColor;
         text-align: center;
+        animation: slidein 0.7s linear;
     }
     .prestaList {
+        animation: fadein 0.7s linear;
         list-style: none;
         display: flex;
         flex-wrap: wrap;

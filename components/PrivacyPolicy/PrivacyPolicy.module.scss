@@ -13,6 +13,7 @@
     z-index: 2;
     margin-left: -20px;
     border: 2px solid $mainLightColor;
+    animation: fadein linear 500ms;
     .policyHead {
         display: flex;
         justify-content: space-between;

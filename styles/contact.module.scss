@@ -12,8 +12,10 @@
         margin: 30px 5px 15px 5px;
         padding: 0;
         color: $mainDarkColor;
+        animation: slidein 0.7s linear;
     }
     .contactForm {
+        animation: fadein linear 1000ms;
         position: relative;
         width: 90%;
         max-width: 730px;

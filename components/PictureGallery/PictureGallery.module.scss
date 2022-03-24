@@ -6,9 +6,11 @@
     max-width: 1700px;
     margin: 0;
     padding: 0;
+    animation: fadein linear 1000ms;
     .pictureItem {
         display: flex;
         justify-content: center;
+        transition: visible linear 500ms;
         a {
             display: flex;
             justify-content: center;

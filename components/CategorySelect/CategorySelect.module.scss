@@ -9,6 +9,7 @@
     text-align: center;
     border: 2px solid $mainDarkColor;
     cursor: pointer;
+    animation: slidein 0.7s linear;
     &:hover {
         background-color: $mainDarkColor;
         color: $mainLightColor;

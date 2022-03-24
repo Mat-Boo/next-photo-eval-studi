@@ -8,6 +8,7 @@
     align-items: center;
     flex-direction: column;
     margin-top: 85px;
+    animation: fadein linear 1000ms;
     .titleBox {
         background: $mainDarkColor;
         opacity: 0.8;
@@ -16,6 +17,7 @@
         border-radius: 10px;
         margin: auto 0;
         padding: 10px;
+        animation: slidein 0.7s linear;
         h1, h2 {
             text-align: center;
             margin: 0;
@@ -27,24 +29,39 @@
         h1 {
             color: $mainLightColor;
             font-weight: 100;
-            font-size: 3em;
+            font-size: 5em;
+            animation: slidein 0.7s linear;
         }
         h2 {
             color: darken($mainDarkColor, 30);
             font-weight: 100;
-            font-size: 2.5em
+            font-size: 4em;
+            animation: slidein 0.7s linear;
         }
     }
 }
 
-@media screen and (min-width: 800px) {
+@media screen and (max-width: 800px) {
     .mainPicture {
         .titleBox {
             h1 {
-                font-size: 5em;
+                font-size: 3em;
             }
             h2 {
-                font-size: 4em;
+                font-size: 2.5em;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 417px) {
+    .mainPicture {
+        .titleBox {
+            h1 {
+                font-size: 2em;
+            }
+            h2 {
+                font-size: 1.5em;
             }
         }
     }

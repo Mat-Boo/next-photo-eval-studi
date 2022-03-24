@@ -5,6 +5,7 @@
     align-items: center;
     width: 100vw;
     color: $mainDarkColor;
+    animation: fadein linear 1000ms;
     .logo404 {
         display: flex;
         align-items: center;
@@ -27,6 +28,7 @@
         margin: 0;
         text-align: center;
         font-weight: 500;
+        animation: slidein linear 1000ms;
     }
     span {
         font-size: 1.5em;
