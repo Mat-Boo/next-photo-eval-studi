@@ -74,6 +74,12 @@ export async function getStaticProps(context) {
     const prestationMd = fs.readFileSync(`./data/prestations/${slug.prestation}.md`, 'utf-8');
     const {content,data} = matter(prestationMd);
 
+    if (!data) {
+        return {
+          notFound: true,
+        };
+      }
+
     return {
         props: {
             slug,
