@@ -27,11 +27,26 @@
         width: 100%;
         max-width: 1700px;
         padding: 10px;
+        .picture {
+            grid-area: picture;
+            border: 5px solid white;
+            display: flex;
+            border-radius: 10px;
+            box-shadow: 0 0 5px $mainDarkColor;
+            width: 100%;
+            max-width: 648px;
+            margin: 20px 0;
+            img {
+                border-radius: 10px;
+                object-fit: cover;
+            }
+        }
         .description {
             grid-area: description;
             background: $mainDarkColor;
             height: 100%;
             width: 100%;
+            max-width: 972px;
             box-shadow: 0 0 5px $mainDarkColor;
             border-radius: 10px;
             padding: 20px;
@@ -64,23 +79,11 @@
                 filter: invert(92%) sepia(5%) saturate(20%) hue-rotate(225deg) brightness(100%) contrast(97%);
             }
         }
-        .picture {
-            grid-area: picture;
-            border: 5px solid white;
-            display: flex;
-            border-radius: 10px;
-            box-shadow: 0 0 5px $mainDarkColor;
-            width: 100%;
-            margin: 20px 0;
-            img {
-                border-radius: 10px;
-                object-fit: cover;
-            }
-        }
         .infos {
             margin: 20px 0;
             grid-area: infos;
             width: 100%;
+            max-width: 648px;
             background: darken($mainLightColor, 15);
             box-shadow: 0 0 5px $mainDarkColor;
             border-radius: 10px;
