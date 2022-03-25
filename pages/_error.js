@@ -23,7 +23,7 @@ export default function _error() {
                     </div>
                     <span>4</span>
                 </div>
-                <h1>PAGE INTROUVAB</h1>
+                <h1>PAGE INTROUVABLE</h1>
                 <span>Cette page n'existe pas !</span>
                 <Link href='/'>
                     <a>Retourner à l'accueil</a>
