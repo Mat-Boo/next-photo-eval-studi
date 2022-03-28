@@ -6,8 +6,8 @@ export default function ModalConfirmContact() {
     const modalRef = useRef();
 
     const hideModal = () => {
-        modalRef.current.parentNode.parentNode.firstChild.style.pointerEvents= 'auto';
-        modalRef.current.parentNode.parentNode.firstChild.style.opacity= '1';
+        modalRef.current.parentNode.parentNode.childNodes[1].style.pointerEvents= 'auto';
+        modalRef.current.parentNode.parentNode.childNodes[1].style.opacity= '1';
         modalRef.current.style.display = 'none';
     }
 

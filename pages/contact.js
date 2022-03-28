@@ -29,11 +29,13 @@ export default function Contact(props) {
 
     const displayPolicy = () => {
         policyRef.current.childNodes[0].style.display = 'block';
+        document.body.style.overflow= 'hidden';
     }
 
     const hidePolicy = (e) => {
         if(e.target.id === 'contact') {
             policyRef.current.childNodes[0].style.display = 'none';
+            document.body.style.overflow= 'auto';
         }
     }
 

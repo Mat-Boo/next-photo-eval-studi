@@ -31,12 +31,20 @@ export default function Navbar() {
                 dispatch(updatePresta(''))
             }
         }
+        activeOverflow();
+    }
+
+    const activeOverflow = () => {
+        if (document.body.style.overflow === 'hidden') {
+            document.body.style.overflow = 'auto';
+        }
+
     }
 
     return (
         <nav className={styles.navbar}>
             <Link href='/'>
-                <a  className={styles.logoNav}>
+                <a  className={styles.logoNav} onClick={activeOverflow}>
                     <Image src='/resources/LogoNavbar.png' alt='logo' width='833' height='452'/>
                 </a>
             </Link>

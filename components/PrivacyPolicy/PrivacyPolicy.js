@@ -7,6 +7,7 @@ export default function PrivacyPolicy() {
 
     const hidePolicy = () => {
         policyRef.current.style.display = 'none';
+        document.body.style.overflow= 'auto';
     }
 
     return (
