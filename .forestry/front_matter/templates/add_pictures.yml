@@ -11,5 +11,3 @@ fields:
   type: image_gallery
   config: {}
   label: Ajouter des photos
-pages:
-- data/galleries/Paysage.md
