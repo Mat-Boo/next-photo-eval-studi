@@ -30,7 +30,7 @@ export default function Prestations(props) {
                 <meta name="twitter:description" content="Photographe professionnel, retrouvez mes différentes prestations et tarifs, mes offres sur mesures pour vos événements, adaptées à vos besoins." />
                 <meta name="twitter:image:src" content="https://c-cantin-photo.netlify.app/resources/homeOg.png" />
             </Head>
-            <div className={styles.presta}>
+            <main className={styles.presta}>
                 <h1>PRESTATIONS</h1>
                 <ul className={styles.prestaList}>
                     {
@@ -50,7 +50,7 @@ export default function Prestations(props) {
                         ))
                     }
                 </ul>
-            </div>
+            </main>
         </>
     )
 }

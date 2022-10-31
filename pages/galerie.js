@@ -21,6 +21,7 @@ export default function Gallery(props) {
 
     const handlerCategory = (e) => {
         categoriesListRef.current.childNodes.forEach((item) => {
+            console.dir(item);
             item.childNodes[0].style.background='#E8E9E9';
             item.childNodes[0].style.color='#47555E';
         })
@@ -50,23 +51,26 @@ export default function Gallery(props) {
                 <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
                 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
                 <title>GALERIE | Charles Cantin - Photographe</title>
-                <meta name="description" content="Photographe professionnel, découvrez ma galerie photos de portrait, d'événement tels que les baptêmes ou mariages, en couple ou en famille, pendant votre grossesse ou avec votre bébé." />
+                <meta name="description" content="Photographe professionnel, découvrez ma galerie photos de portrait,
+                 d'événement tels que les baptêmes ou mariages, en couple ou en famille, pendant votre grossesse ou avec votre bébé." />
                 <link rel="icon" href="/favicon.ico" />
                 {/* Open Graph meta for Facebook */}
                 <meta property="og:title" content="GALERIE | Charles Cantin - Photographe" />
                 <meta property="og:url" content="https://c-cantin-photo.netlify.app/" />
                 <meta property="og:image" content="https://c-cantin-photo.netlify.app/resources/homeOg.png" />
-                <meta property="og:description" content="Photographe professionnel, découvrez ma galerie photos de portrait, d'événement tels que les baptêmes ou mariages, en couple ou en famille, pendant votre grossesse ou avec votre bébé." />
+                <meta property="og:description" content="Photographe professionnel, découvrez ma galerie photos de portrait,
+                 d'événement tels que les baptêmes ou mariages, en couple ou en famille, pendant votre grossesse ou avec votre bébé." />
                 <meta property="og:site_name" content="Charles Cantin - Photographe" />
                 <meta property="og:type" content="website" />
                 {/* Card meta for Twitter */}
                 <meta name="twitter:card" content="summary_large_image" />
                 <meta name="twitter:site" content="@ccantin_photo" />
                 <meta name="twitter:title" content="GALERIE | Charles Cantin - Photographe" />
-                <meta name="twitter:description" content="Photographe professionnel, découvrez ma galerie photos de portrait, d'événement tels que les baptêmes ou mariages, en couple ou en famille, pendant votre grossesse ou avec votre bébé." />
+                <meta name="twitter:description" content="Photographe professionnel, découvrez ma galerie photos de portrait,
+                 d'événement tels que les baptêmes ou mariages, en couple ou en famille, pendant votre grossesse ou avec votre bébé." />
                 <meta name="twitter:image:src" content="https://c-cantin-photo.netlify.app/resources/homeOg.png" />
             </Head>
-            <div className={styles.gallery}>
+            <main className={styles.gallery}>
                 <h1>{selectedGallery.length > 1 || selectedGallery[0] === undefined ? 'GALERIE' : 'GALERIE - ' + selectedGallery[0].data.category}</h1>
                 <ul ref={categoriesListRef} className={styles.categoriesList}>
                     {
@@ -93,7 +97,7 @@ export default function Gallery(props) {
                         })
                     }
                 </ul>
-            </div>                              
+            </main>                              
         </>
     )
 }

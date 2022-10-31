@@ -3,7 +3,7 @@ import styles from '../styles/home.module.scss';
 
 export default function Home() {
     return (
-        <div className={styles.container}>
+        <main className={styles.container}>
             <Head>
                 <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
                 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -30,6 +30,6 @@ export default function Home() {
                     <h2>- Photographe -</h2>
                 </div>
             </div>
-        </div>
+        </main>
     )
 }

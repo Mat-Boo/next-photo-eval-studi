@@ -15,7 +15,7 @@ export default function _error() {
                 <meta name="description" content="Photographe professionnel, spécialisé en portrait. Shooting en studio, reportage naturel en extérieur ou à domicile, mariage, photo d'entreprise." />
                 <link rel="icon" href="/favicon.ico" />
             </Head>
-            <div className={styles.page404}>
+            <main className={styles.page404}>
                 <div className={styles.logo404}>
                     <span>4</span>
                     <div className={styles.lense}>
@@ -28,7 +28,7 @@ export default function _error() {
                 <Link href='/'>
                     <a>Retourner à l'accueil</a>
                 </Link>
-            </div>
+            </main>
         </>
     )
 }

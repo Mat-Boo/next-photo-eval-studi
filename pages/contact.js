@@ -82,7 +82,7 @@ export default function Contact(props) {
                 <meta name="twitter:description" content="Photographe professionnel, besoin de plus d'information, utilisez mon formulaire de contact et je répondrais le plus rapidement possible." />
                 <meta name="twitter:image:src" content="https://c-cantin-photo.netlify.app/resources/homeOg.png" />
             </Head>
-            <div id='contact' className={styles.contact} onClick={(e) => hidePolicy(e)} onSubmit={sendEmail}>
+            <main id='contact' className={styles.contact} onClick={(e) => hidePolicy(e)} onSubmit={sendEmail}>
                 <h1>CONTACTEZ MOI</h1>
                 <form ref={formRef} id="contact-form" className={styles.contactForm}>
                     <div className={styles.contactInfos}>
@@ -133,7 +133,7 @@ export default function Contact(props) {
                 <div ref={modalRef}>
                     <ModalConfirmContact />
                 </div>
-            </div>
+            </main>
         </>
     )
 }

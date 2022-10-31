@@ -37,13 +37,13 @@ export default function Prestation(props) {
                 <meta name="twitter:description" content="Photographe professionnel, retrouvez les détails de chacunes de mes prestations et contactez moi directement." />
                 <meta name="twitter:image:src" content="https://c-cantin-photo.netlify.app/resources/homeOg.png" />
             </Head>
-            <div className={styles.prestation}>
+            <main className={styles.prestation}>
                 <h1>{props.data.title.toUpperCase()}</h1>
                 <div className={styles.prestaDescr}>
                     <div className={styles.description}>
                         <div className={styles.titleAndDescr}>
-                            <h3>- Description -</h3>
-                            <h5>{props.data.subtitle}</h5>
+                            <h2>- Description -</h2>
+                            <h3>{props.data.subtitle}</h3>
                             <p>{props.data.description}</p>
                         </div>
                         <div  className={styles.silhouette}>
@@ -55,7 +55,7 @@ export default function Prestation(props) {
                     </div>
                     <div className={styles.infos}>
                         <div className={styles.titleAndFare}>
-                            <h3>- Informations complémentaires -</h3>
+                            <h2>- Informations complémentaires -</h2>
                             <span className={styles.fare}>{props.data.fare + (isNaN(props.data.fare) ? '' : ' €')}</span>
                         </div>
                         <p>{props.data.infosSup}</p>
@@ -64,7 +64,7 @@ export default function Prestation(props) {
                         </Link>
                     </div>
                 </div>
-            </div>
+            </main>
         </>
     )
 }

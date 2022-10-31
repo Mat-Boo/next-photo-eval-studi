@@ -58,10 +58,10 @@
             align-items: center;
             .titleAndDescr {
                 width: 100%;
-                h3 {
+                h2 {
                     text-align: center;
                 }
-                h5 {
+                h3 {
                     font-size: 1.2em;
                     font-weight: 500;
                     color: $mainDarkColor;
@@ -159,7 +159,7 @@
                 height: 100%;
                 margin: 0 20px 0 0;
                 .titleAndDescr {
-                    h3 {
+                    h2 {
                         font-size: 1.5em;
                         margin: 0 0 24px 0;
                     }
@@ -171,7 +171,7 @@
             .infos {
                 margin: 0;
                 .titleAndFare {
-                    h3 {
+                    h2 {
                         font-size: 1.5em;
                         margin: 10px 0 10px 0;
                     }
