@@ -1,0 +1,16 @@
+
+RewriteEngine on
+# DO NOT REMOVE. CLOUDLINUX PASSENGER CONFIGURATION BEGIN
+PassengerAppRoot "/home/cinj2083/public_html/auxseen/studi/charles-cantin"
+PassengerBaseURI "/"
+PassengerNodejs "/home/cinj2083/nodevenv/public_html/auxseen/studi/charles-cantin/16/bin/node"
+PassengerAppType node
+PassengerStartupFile server.js
+# DO NOT REMOVE. CLOUDLINUX PASSENGER CONFIGURATION END
+<Files 403.shtml>
+order allow,deny
+allow from all
+</Files>
+RewriteCond %{HTTP_HOST} ^charles\-cantin\.studi\.auxseen\.com$
+RewriteRule "https\:\/\/charles\-cantin\.studi\.auxseen\.com\/" [R=301,L]
+

@@ -1,11 +1,11 @@
 {
-  "/404": "pages/404.html",
+  "/404": "pages/404.js",
   "/_app": "pages/_app.js",
   "/_document": "pages/_document.js",
   "/_error": "pages/_error.js",
   "/contact": "pages/contact.js",
   "/galerie": "pages/galerie.js",
-  "/": "pages/index.html",
+  "/": "pages/index.js",
   "/prestations/[prestation]": "pages/prestations/[prestation].js",
   "/prestations": "pages/prestations.js"
 }
