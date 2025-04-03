@@ -16,10 +16,11 @@ export default function Prestations(props) {
                 <title>PRESTATIONS | Charles Cantin - Photographe</title>
                 <meta name="description" content="Photographe professionnel, retrouvez mes différentes prestations et tarifs, mes offres sur mesures pour vos événements, adaptées à vos besoins." />
                 <link rel="icon" href="/favicon.ico" />
+                <script src="https://www.google.com/recaptcha/api.js" async defer></script>
                 {/* Open Graph meta for Facebook */}
                 <meta property="og:title" content="PRESTATIONS | Charles Cantin - Photographe" />
-                <meta property="og:url" content="https://c-cantin-photo.netlify.app/" />
-                <meta property="og:image" content="https://c-cantin-photo.netlify.app/resources/homeOg.png" />
+                <meta property="og:url" content="https://charles-cantin.studi.auxseen.com/" />
+                <meta property="og:image" content="https://charles-cantin.studi.auxseen.com/resources/homeOg.png" />
                 <meta property="og:description" content="Photographe professionnel, retrouvez mes différentes prestations et tarifs, mes offres sur mesures pour vos événements, adaptées à vos besoins." />
                 <meta property="og:site_name" content="Charles Cantin - Photographe" />
                 <meta property="og:type" content="website" />
@@ -28,7 +29,7 @@ export default function Prestations(props) {
                 <meta name="twitter:site" content="@ccantin_photo" />
                 <meta name="twitter:title" content="PRESTATIONS | Charles Cantin - Photographe" />
                 <meta name="twitter:description" content="Photographe professionnel, retrouvez mes différentes prestations et tarifs, mes offres sur mesures pour vos événements, adaptées à vos besoins." />
-                <meta name="twitter:image:src" content="https://c-cantin-photo.netlify.app/resources/homeOg.png" />
+                <meta name="twitter:image:src" content="https://charles-cantin.studi.auxseen.com/resources/homeOg.png" />
             </Head>
             <main className={styles.presta}>
                 <h1>PRESTATIONS</h1>
@@ -37,14 +38,14 @@ export default function Prestations(props) {
                         props.prestations.map((prestation) => (
                             <li key={prestation.file}>
                                 <Link href={'/prestations/' + prestation.file}>
-                                <a>
-                                    <PrestaCard
-                                        prestaPicture={prestation.data.picture}
-                                        prestaTitle={prestation.data.title}
-                                        prestaContent={prestation.data.subtitle}
-                                        prestaFare={prestation.data.fare}
-                                    />
-                                </a>
+                                    <a>
+                                        <PrestaCard
+                                            prestaPicture={prestation.data.picture}
+                                            prestaTitle={prestation.data.title}
+                                            prestaContent={prestation.data.subtitle}
+                                            prestaFare={prestation.data.fare}
+                                        />
+                                    </a>
                                 </Link>
                             </li>
                         ))
@@ -59,7 +60,7 @@ export async function getStaticProps() {
 
     const files = fs.readdirSync('data/prestations/', "utf-8");
 
-    const prestations = files.map(file =>  (
+    const prestations = files.map(file => (
         {
             file: file.split('.')[0],
             data: matter(fs.readFileSync(`./data/prestations/${file}`, 'utf-8')).data

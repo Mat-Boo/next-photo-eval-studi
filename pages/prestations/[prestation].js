@@ -14,7 +14,7 @@ export default function Prestation(props) {
     const stockInStore = () => {
         dispatch(updatePresta(props.slug.prestation))
     }
-    
+
     return (
         <>
             <Head>
@@ -23,10 +23,11 @@ export default function Prestation(props) {
                 <title>{props.data.title.toUpperCase()} | Charles Cantin - Photographe</title>
                 <meta name="description" content="Photographe professionnel, retrouvez les détails de chacunes de mes prestations et contactez moi directement." />
                 <link rel="icon" href="/favicon.ico" />
+                <script src="https://www.google.com/recaptcha/api.js" async defer></script>
                 {/* Open Graph meta for Facebook */}
                 <meta property="og:title" content={props.data.title.toUpperCase() + " | Charles Cantin - Photographe"} />
-                <meta property="og:url" content="https://c-cantin-photo.netlify.app/" />
-                <meta property="og:image" content="https://c-cantin-photo.netlify.app/resources/homeOg.png" />
+                <meta property="og:url" content="https://charles-cantin.studi.auxseen.com/" />
+                <meta property="og:image" content="https://charles-cantin.studi.auxseen.com/resources/homeOg.png" />
                 <meta property="og:description" content="Photographe professionnel, retrouvez les détails de chacunes de mes prestations et contactez moi directement." />
                 <meta property="og:site_name" content="Charles Cantin - Photographe" />
                 <meta property="og:type" content="website" />
@@ -35,7 +36,7 @@ export default function Prestation(props) {
                 <meta name="twitter:site" content="@ccantin_photo" />
                 <meta name="twitter:title" content={props.data.title.toUpperCase() + " | Charles Cantin - Photographe"} />
                 <meta name="twitter:description" content="Photographe professionnel, retrouvez les détails de chacunes de mes prestations et contactez moi directement." />
-                <meta name="twitter:image:src" content="https://c-cantin-photo.netlify.app/resources/homeOg.png" />
+                <meta name="twitter:image:src" content="https://charles-cantin.studi.auxseen.com/resources/homeOg.png" />
             </Head>
             <main className={styles.prestation}>
                 <h1>{props.data.title.toUpperCase()}</h1>
@@ -46,12 +47,12 @@ export default function Prestation(props) {
                             <h3>{props.data.subtitle}</h3>
                             <p>{props.data.description}</p>
                         </div>
-                        <div  className={styles.silhouette}>
-                            <Image src={props.data.clipart} alt='clipartPresta' width='150' height='150'/>
+                        <div className={styles.silhouette}>
+                            <Image src={props.data.clipart} alt='clipartPresta' width='150' height='150' />
                         </div>
                     </div>
                     <div className={styles.picture}>
-                        <Image src={props.data.picture} alt={props.data.title + 'Picture'} width='1920' height='1280'/>
+                        <Image src={props.data.picture} alt={props.data.title + 'Picture'} width='1920' height='1280' />
                     </div>
                     <div className={styles.infos}>
                         <div className={styles.titleAndFare}>
@@ -72,13 +73,13 @@ export default function Prestation(props) {
 export async function getStaticProps(context) {
     const slug = context.params
     const prestationMd = fs.readFileSync(`./data/prestations/${slug.prestation}.md`, 'utf-8');
-    const {content,data} = matter(prestationMd);
+    const { content, data } = matter(prestationMd);
 
     return {
         props: {
             slug,
-            content, 
-			data
+            content,
+            data
         }
     }
 }
@@ -88,14 +89,14 @@ export async function getStaticPaths() {
     const files = fs.readdirSync('data/prestations/', "utf-8");
 
     // on récupère tous les fichiers markdown dans ce dossier et on génère les paths et on les retourne à la fin de la fonction.
-	const paths = files.map(file =>  (
+    const paths = files.map(file => (
         {
-            params : {prestation: file.split('.')[0]}
+            params: { prestation: file.split('.')[0] }
         }
     ));
-    
-		return {
-            paths,
-            fallback: false
-        }
+
+    return {
+        paths,
+        fallback: false
+    }
 }

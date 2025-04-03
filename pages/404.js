@@ -14,6 +14,7 @@ export default function Page404() {
                 <title>PAGE INTROUVABLE | Charles Cantin - Photographe</title>
                 <meta name="description" content="Photographe professionnel, spécialisé en portrait. Shooting en studio, reportage naturel en extérieur ou à domicile, mariage, photo d'entreprise." />
                 <link rel="icon" href="/favicon.ico" />
+                <script src="https://www.google.com/recaptcha/api.js" async defer></script>
             </Head>
             <main className={styles.page404}>
                 <div className={styles.logo404}>

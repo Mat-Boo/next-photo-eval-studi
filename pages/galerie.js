@@ -54,10 +54,11 @@ export default function Gallery(props) {
                 <meta name="description" content="Photographe professionnel, découvrez ma galerie photos de portrait,
                  d'événement tels que les baptêmes ou mariages, en couple ou en famille, pendant votre grossesse ou avec votre bébé." />
                 <link rel="icon" href="/favicon.ico" />
+                <script src="https://www.google.com/recaptcha/api.js" async defer></script>
                 {/* Open Graph meta for Facebook */}
                 <meta property="og:title" content="GALERIE | Charles Cantin - Photographe" />
-                <meta property="og:url" content="https://c-cantin-photo.netlify.app/" />
-                <meta property="og:image" content="https://c-cantin-photo.netlify.app/resources/homeOg.png" />
+                <meta property="og:url" content="https://charles-cantin.studi.auxseen.com/" />
+                <meta property="og:image" content="https://charles-cantin.studi.auxseen.com/resources/homeOg.png" />
                 <meta property="og:description" content="Photographe professionnel, découvrez ma galerie photos de portrait,
                  d'événement tels que les baptêmes ou mariages, en couple ou en famille, pendant votre grossesse ou avec votre bébé." />
                 <meta property="og:site_name" content="Charles Cantin - Photographe" />
@@ -68,7 +69,7 @@ export default function Gallery(props) {
                 <meta name="twitter:title" content="GALERIE | Charles Cantin - Photographe" />
                 <meta name="twitter:description" content="Photographe professionnel, découvrez ma galerie photos de portrait,
                  d'événement tels que les baptêmes ou mariages, en couple ou en famille, pendant votre grossesse ou avec votre bébé." />
-                <meta name="twitter:image:src" content="https://c-cantin-photo.netlify.app/resources/homeOg.png" />
+                <meta name="twitter:image:src" content="https://charles-cantin.studi.auxseen.com/resources/homeOg.png" />
             </Head>
             <main className={styles.gallery}>
                 <h1>{selectedGallery.length > 1 || selectedGallery[0] === undefined ? 'GALERIE' : 'GALERIE - ' + selectedGallery[0].data.category}</h1>
