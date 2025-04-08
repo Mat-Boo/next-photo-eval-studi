@@ -4,10 +4,17 @@
     width: 100%;
     display: flex;
     justify-content: center;
+    gap: 5px;
     background: $mainDarkColor;
     padding: 5px 0;
     .copyright {
         text-align: center;
         color: $mainLightColor;
+    }
+    .auxseenLink {
+        text-decoration: none;
+        color: #9DC182;
+        font-size: 1em;
+        font-weight: 600;
     }
 }
