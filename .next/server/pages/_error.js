@@ -52,6 +52,10 @@ function _error() {
                         name: "description",
                         content: "Photographe professionnel, sp\xe9cialis\xe9 en portrait. Shooting en studio, reportage naturel en ext\xe9rieur ou \xe0 domicile, mariage, photo d'entreprise."
                     }),
+                    /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("meta", {
+                        name: "robots",
+                        content: "noindex, nofollow"
+                    }),
                     /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("link", {
                         rel: "icon",
                         href: "/favicon.ico"

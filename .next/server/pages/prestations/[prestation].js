@@ -90,6 +90,10 @@ function Prestation(props) {
                         name: "description",
                         content: "Photographe professionnel, retrouvez les d\xe9tails de chacunes de mes prestations et contactez moi directement."
                     }),
+                    /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("meta", {
+                        name: "robots",
+                        content: "noindex, nofollow"
+                    }),
                     /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("link", {
                         rel: "icon",
                         href: "/favicon.ico"

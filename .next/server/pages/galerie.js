@@ -211,6 +211,10 @@ function Gallery(props) {
                         name: "description",
                         content: "Photographe professionnel, d\xe9couvrez ma galerie photos de portrait, d'\xe9v\xe9nement tels que les bapt\xeames ou mariages, en couple ou en famille, pendant votre grossesse ou avec votre b\xe9b\xe9."
                     }),
+                    /*#__PURE__*/ jsx_runtime_.jsx("meta", {
+                        name: "robots",
+                        content: "noindex, nofollow"
+                    }),
                     /*#__PURE__*/ jsx_runtime_.jsx("link", {
                         rel: "icon",
                         href: "/favicon.ico"

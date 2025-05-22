@@ -53,6 +53,7 @@ export default function Gallery(props) {
                 <title>GALERIE | Charles Cantin - Photographe</title>
                 <meta name="description" content="Photographe professionnel, découvrez ma galerie photos de portrait,
                  d'événement tels que les baptêmes ou mariages, en couple ou en famille, pendant votre grossesse ou avec votre bébé." />
+                <meta name="robots" content="noindex, nofollow" />
                 <link rel="icon" href="/favicon.ico" />
                 <script src="https://www.google.com/recaptcha/api.js" async defer></script>
                 {/* Open Graph meta for Facebook */}

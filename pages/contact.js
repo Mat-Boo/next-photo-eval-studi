@@ -67,6 +67,7 @@ export default function Contact(props) {
                 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
                 <title>CONTACT | Charles Cantin - Photographe</title>
                 <meta name="description" content="Photographe professionnel, besoin de plus d'information, utilisez mon formulaire de contact et je répondrais le plus rapidement possible." />
+                <meta name="robots" content="noindex, nofollow" />
                 <link rel="icon" href="/favicon.ico" />
                 <script src="https://www.google.com/recaptcha/api.js" async defer></script>
                 {/* Open Graph meta for Facebook */}

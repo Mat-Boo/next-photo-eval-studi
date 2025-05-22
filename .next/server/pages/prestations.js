@@ -146,6 +146,10 @@ function Prestations(props) {
                         name: "description",
                         content: "Photographe professionnel, retrouvez mes diff\xe9rentes prestations et tarifs, mes offres sur mesures pour vos \xe9v\xe9nements, adapt\xe9es \xe0 vos besoins."
                     }),
+                    /*#__PURE__*/ jsx_runtime_.jsx("meta", {
+                        name: "robots",
+                        content: "noindex, nofollow"
+                    }),
                     /*#__PURE__*/ jsx_runtime_.jsx("link", {
                         rel: "icon",
                         href: "/favicon.ico"

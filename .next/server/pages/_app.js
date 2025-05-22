@@ -63,21 +63,21 @@ var Footer_module_default = /*#__PURE__*/__webpack_require__.n(Footer_module);
 
 
 function Footer() {
-    return(/*#__PURE__*/ (0,jsx_runtime_.jsxs)("footer", {
+    return(/*#__PURE__*/ jsx_runtime_.jsx("footer", {
         className: (Footer_module_default()).footer,
-        children: [
-            /*#__PURE__*/ jsx_runtime_.jsx("span", {
-                className: (Footer_module_default()).copyright,
-                children: "\xa9 2022 Charles Cantin | Cr\xe9\xe9 par Mathieu Bouthors | "
-            }),
-            /*#__PURE__*/ jsx_runtime_.jsx("a", {
-                href: "https://www.auxseen.com",
-                className: (Footer_module_default()).auxseenLink,
-                target: "_blank",
-                rel: "noopener noreferrer",
-                children: "Auxseen."
-            })
-        ]
+        children: /*#__PURE__*/ (0,jsx_runtime_.jsxs)("span", {
+            className: (Footer_module_default()).copyright,
+            children: [
+                "\xa9 2022 Charles Cantin | Cr\xe9\xe9 par ",
+                /*#__PURE__*/ jsx_runtime_.jsx("a", {
+                    href: "https://www.auxseen.com",
+                    className: (Footer_module_default()).auxseenLink,
+                    target: "_blank",
+                    rel: "noopener noreferrer",
+                    children: "Auxseen."
+                })
+            ]
+        })
     }));
 };
 

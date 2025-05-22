@@ -353,6 +353,10 @@ function Contact(props) {
                         name: "description",
                         content: "Photographe professionnel, besoin de plus d'information, utilisez mon formulaire de contact et je r\xe9pondrais le plus rapidement possible."
                     }),
+                    /*#__PURE__*/ jsx_runtime_.jsx("meta", {
+                        name: "robots",
+                        content: "noindex, nofollow"
+                    }),
                     /*#__PURE__*/ jsx_runtime_.jsx("link", {
                         rel: "icon",
                         href: "/favicon.ico"

@@ -15,6 +15,7 @@ export default function Prestations(props) {
                 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
                 <title>PRESTATIONS | Charles Cantin - Photographe</title>
                 <meta name="description" content="Photographe professionnel, retrouvez mes différentes prestations et tarifs, mes offres sur mesures pour vos événements, adaptées à vos besoins." />
+                <meta name="robots" content="noindex, nofollow" />
                 <link rel="icon" href="/favicon.ico" />
                 <script src="https://www.google.com/recaptcha/api.js" async defer></script>
                 {/* Open Graph meta for Facebook */}

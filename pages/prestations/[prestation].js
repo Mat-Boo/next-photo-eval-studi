@@ -22,6 +22,7 @@ export default function Prestation(props) {
                 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
                 <title>{props.data.title.toUpperCase()} | Charles Cantin - Photographe</title>
                 <meta name="description" content="Photographe professionnel, retrouvez les détails de chacunes de mes prestations et contactez moi directement." />
+                <meta name="robots" content="noindex, nofollow" />
                 <link rel="icon" href="/favicon.ico" />
                 <script src="https://www.google.com/recaptcha/api.js" async defer></script>
                 {/* Open Graph meta for Facebook */}

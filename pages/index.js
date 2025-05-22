@@ -9,6 +9,7 @@ export default function Home() {
                 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
                 <title>Charles Cantin - Photographe</title>
                 <meta name="description" content="Photographe professionnel, spécialisé en portrait. Shooting en studio, reportage naturel en extérieur ou à domicile, mariage, photo d'entreprise." />
+                <meta name="robots" content="noindex, nofollow" />
                 <link rel="icon" href="/favicon.ico" />
                 <script src="https://www.google.com/recaptcha/api.js" async defer></script>
                 {/* Open Graph meta for Facebook */}
