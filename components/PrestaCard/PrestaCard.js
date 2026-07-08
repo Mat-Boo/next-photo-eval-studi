@@ -6,7 +6,7 @@ export default function PrestaCard({prestaPicture, prestaTitle, prestaContent, p
     return (
         <div className={styles.prestaCard}>
             <div className={styles.picture}>
-                <Image src={prestaPicture} alt={prestaTitle + 'Picture'} width='1920' height='1280'/>
+                <Image src={prestaPicture} alt={prestaTitle + 'Picture'} width='1920' height='1280' unoptimized/>
             </div>
             <div className={styles.prestaInfos}>
                 <div className={styles.titleFare}>

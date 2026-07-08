@@ -73,16 +73,17 @@ var CategorySelect_module_default = /*#__PURE__*/__webpack_require__.n(CategoryS
 
 
 function CategorySelect({ categoryName , categoryId , handlerCategory  }) {
-    return(/*#__PURE__*/ jsx_runtime_.jsx("p", {
+    return /*#__PURE__*/ jsx_runtime_.jsx("p", {
         onClick: handlerCategory,
         id: categoryId,
         className: (CategorySelect_module_default()).categoryName,
         children: categoryName
-    }));
-};
+    });
+}
 
 // EXTERNAL MODULE: ./node_modules/next/image.js
 var next_image = __webpack_require__(5675);
+var image_default = /*#__PURE__*/__webpack_require__.n(next_image);
 // EXTERNAL MODULE: ./components/PictureGallery/PictureGallery.module.scss
 var PictureGallery_module = __webpack_require__(4787);
 var PictureGallery_module_default = /*#__PURE__*/__webpack_require__.n(PictureGallery_module);
@@ -103,15 +104,15 @@ function PictureGallery({ gallery  }) {
             showCaption: false
         },
         progressBar: {
-            backgroundColor: '#47555E'
+            backgroundColor: "#47555E"
         }
     };
-    return(/*#__PURE__*/ jsx_runtime_.jsx(external_simple_react_lightbox_.SRLWrapper, {
+    return /*#__PURE__*/ jsx_runtime_.jsx(external_simple_react_lightbox_.SRLWrapper, {
         options: options,
         children: /*#__PURE__*/ jsx_runtime_.jsx("ul", {
             className: (PictureGallery_module_default()).picturesList,
             children: gallery.data.pictures.map((picture)=>{
-                return(/*#__PURE__*/ jsx_runtime_.jsx("li", {
+                return /*#__PURE__*/ jsx_runtime_.jsx("li", {
                     className: (PictureGallery_module_default()).pictureItem,
                     children: /*#__PURE__*/ jsx_runtime_.jsx("a", {
                         href: picture,
@@ -119,19 +120,20 @@ function PictureGallery({ gallery  }) {
                         "data-title": "Caption1",
                         children: /*#__PURE__*/ jsx_runtime_.jsx("div", {
                             className: (PictureGallery_module_default()).picture,
-                            children: /*#__PURE__*/ jsx_runtime_.jsx(next_image["default"], {
+                            children: /*#__PURE__*/ jsx_runtime_.jsx((image_default()), {
                                 src: picture,
-                                alt: gallery.file + '_' + gallery.data.pictures.indexOf(picture),
+                                alt: gallery.file + "_" + gallery.data.pictures.indexOf(picture),
                                 width: "1920",
-                                height: "1280"
+                                height: "1280",
+                                unoptimized: true
                             })
                         })
                     })
-                }, gallery.data.pictures.indexOf(picture)));
+                }, gallery.data.pictures.indexOf(picture));
             })
         })
-    }));
-};
+    });
+}
 
 // EXTERNAL MODULE: ./styles/galerie.module.scss
 var galerie_module = __webpack_require__(981);
@@ -155,7 +157,7 @@ var head_default = /*#__PURE__*/__webpack_require__.n(head_);
 
 
 function Gallery(props) {
-    const { 0: selectedGallery1 , 1: setSelectedGallery  } = (0,external_react_.useState)([]);
+    const { 0: selectedGallery , 1: setSelectedGallery  } = (0,external_react_.useState)([]);
     const { 0: displayCancelFilter , 1: setDisplayCancelFilter  } = (0,external_react_.useState)(false);
     const categoriesListRef = (0,external_react_.useRef)();
     const cancelBtnRef = (0,external_react_.useRef)();
@@ -167,11 +169,11 @@ function Gallery(props) {
     const handlerCategory = (e)=>{
         categoriesListRef.current.childNodes.forEach((item)=>{
             console.dir(item);
-            item.childNodes[0].style.background = '#E8E9E9';
-            item.childNodes[0].style.color = '#47555E';
+            item.childNodes[0].style.background = "#E8E9E9";
+            item.childNodes[0].style.color = "#47555E";
         });
-        e.target.style.background = '#47555E';
-        e.target.style.color = '#E8E9E9';
+        e.target.style.background = "#47555E";
+        e.target.style.color = "#E8E9E9";
         setDisplayCancelFilter(true);
         props.galleries.forEach((gallery)=>{
             if (gallery.file === e.target.id) {
@@ -179,20 +181,19 @@ function Gallery(props) {
                 setSelectedGallery((selectedGallery)=>[
                         ...selectedGallery,
                         gallery
-                    ]
-                );
+                    ]);
             }
         });
     };
     const handlerAllCategories = ()=>{
         categoriesListRef.current.childNodes.forEach((item)=>{
-            item.childNodes[0].style.background = '#E8E9E9';
-            item.childNodes[0].style.color = '#47555E';
+            item.childNodes[0].style.background = "#E8E9E9";
+            item.childNodes[0].style.color = "#47555E";
         });
         setDisplayCancelFilter(false);
         setSelectedGallery(props.galleries);
     };
-    return(/*#__PURE__*/ (0,jsx_runtime_.jsxs)(jsx_runtime_.Fragment, {
+    return /*#__PURE__*/ (0,jsx_runtime_.jsxs)(jsx_runtime_.Fragment, {
         children: [
             /*#__PURE__*/ (0,jsx_runtime_.jsxs)((head_default()), {
                 children: [
@@ -274,7 +275,7 @@ function Gallery(props) {
                 className: (galerie_module_default()).gallery,
                 children: [
                     /*#__PURE__*/ jsx_runtime_.jsx("h1", {
-                        children: selectedGallery1.length > 1 || selectedGallery1[0] === undefined ? 'GALERIE' : 'GALERIE - ' + selectedGallery1[0].data.category
+                        children: selectedGallery.length > 1 || selectedGallery[0] === undefined ? "GALERIE" : "GALERIE - " + selectedGallery[0].data.category
                     }),
                     /*#__PURE__*/ jsx_runtime_.jsx("ul", {
                         ref: categoriesListRef,
@@ -285,38 +286,35 @@ function Gallery(props) {
                                     categoryId: gallery.file,
                                     categoryName: gallery.data.category
                                 })
-                            }, gallery.file)
-                        )
+                            }, gallery.file))
                     }),
                     displayCancelFilter && /*#__PURE__*/ jsx_runtime_.jsx("span", {
                         ref: cancelBtnRef,
-                        onClick: ()=>handlerAllCategories()
-                        ,
+                        onClick: ()=>handlerAllCategories(),
                         className: (galerie_module_default()).allCategories,
                         children: "Annuler le filtre"
                     }),
                     /*#__PURE__*/ jsx_runtime_.jsx("ul", {
                         className: (galerie_module_default()).galleriesList,
-                        children: selectedGallery1.map((gallery)=>{
-                            return(/*#__PURE__*/ jsx_runtime_.jsx("li", {
+                        children: selectedGallery.map((gallery)=>{
+                            return /*#__PURE__*/ jsx_runtime_.jsx("li", {
                                 children: /*#__PURE__*/ jsx_runtime_.jsx(PictureGallery, {
                                     gallery: gallery
                                 })
-                            }, gallery.file));
+                            }, gallery.file);
                         })
                     })
                 ]
             })
         ]
-    }));
-};
+    });
+}
 async function getStaticProps() {
-    const files = external_fs_default().readdirSync('data/galleries/', 'utf-8');
+    const files = external_fs_default().readdirSync("data/galleries/", "utf-8");
     const galleries = files.map((file)=>({
-            file: file.split('.')[0],
-            data: external_gray_matter_default()(external_fs_default().readFileSync(`./data/galleries/${file}`, 'utf-8')).data
-        })
-    );
+            file: file.split(".")[0],
+            data: external_gray_matter_default()(external_fs_default().readFileSync(`./data/galleries/${file}`, "utf-8")).data
+        }));
     return {
         props: {
             galleries
@@ -335,14 +333,6 @@ module.exports = require("gray-matter");
 
 /***/ }),
 
-/***/ 8028:
-/***/ ((module) => {
-
-"use strict";
-module.exports = require("next/dist/server/image-config.js");
-
-/***/ }),
-
 /***/ 4957:
 /***/ ((module) => {
 
@@ -356,6 +346,38 @@ module.exports = require("next/dist/shared/lib/head.js");
 
 "use strict";
 module.exports = require("next/dist/shared/lib/image-config-context.js");
+
+/***/ }),
+
+/***/ 5843:
+/***/ ((module) => {
+
+"use strict";
+module.exports = require("next/dist/shared/lib/image-config.js");
+
+/***/ }),
+
+/***/ 8854:
+/***/ ((module) => {
+
+"use strict";
+module.exports = require("next/dist/shared/lib/router/utils/parse-path.js");
+
+/***/ }),
+
+/***/ 3297:
+/***/ ((module) => {
+
+"use strict";
+module.exports = require("next/dist/shared/lib/router/utils/remove-trailing-slash.js");
+
+/***/ }),
+
+/***/ 9232:
+/***/ ((module) => {
+
+"use strict";
+module.exports = require("next/dist/shared/lib/utils.js");
 
 /***/ }),
 

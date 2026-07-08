@@ -86,10 +86,10 @@ var PrivacyPolicy_module_default = /*#__PURE__*/__webpack_require__.n(PrivacyPol
 function PrivacyPolicy() {
     const policyRef = (0,external_react_.useRef)();
     const hidePolicy = ()=>{
-        policyRef.current.style.display = 'none';
-        document.body.style.overflow = 'auto';
+        policyRef.current.style.display = "none";
+        document.body.style.overflow = "auto";
     };
-    return(/*#__PURE__*/ (0,jsx_runtime_.jsxs)("div", {
+    return /*#__PURE__*/ (0,jsx_runtime_.jsxs)("div", {
         ref: policyRef,
         className: (PrivacyPolicy_module_default()).privacyPolicy,
         children: [
@@ -100,8 +100,7 @@ function PrivacyPolicy() {
                         children: "Politique de confidentialit\xe9 des donn\xe9es"
                     }),
                     /*#__PURE__*/ jsx_runtime_.jsx("svg", {
-                        onClick: ()=>hidePolicy()
-                        ,
+                        onClick: ()=>hidePolicy(),
                         xmlns: "http://www.w3.org/2000/svg",
                         width: "48",
                         height: "48",
@@ -198,8 +197,8 @@ function PrivacyPolicy() {
                 ]
             })
         ]
-    }));
-};
+    });
+}
 
 ;// CONCATENATED MODULE: external "@emailjs/browser"
 const browser_namespaceObject = require("@emailjs/browser");
@@ -214,11 +213,11 @@ var ModalConfirmContact_module_default = /*#__PURE__*/__webpack_require__.n(Moda
 function ModalConfirmContact() {
     const modalRef = (0,external_react_.useRef)();
     const hideModal = ()=>{
-        modalRef.current.parentNode.parentNode.childNodes[1].style.pointerEvents = 'auto';
-        modalRef.current.parentNode.parentNode.childNodes[1].style.opacity = '1';
-        modalRef.current.style.display = 'none';
+        modalRef.current.parentNode.parentNode.childNodes[1].style.pointerEvents = "auto";
+        modalRef.current.parentNode.parentNode.childNodes[1].style.opacity = "1";
+        modalRef.current.style.display = "none";
     };
-    return(/*#__PURE__*/ (0,jsx_runtime_.jsxs)("div", {
+    return /*#__PURE__*/ (0,jsx_runtime_.jsxs)("div", {
         ref: modalRef,
         className: (ModalConfirmContact_module_default()).ModalConfirmContact,
         children: [
@@ -229,8 +228,7 @@ function ModalConfirmContact() {
                         children: "Confirmation"
                     }),
                     /*#__PURE__*/ jsx_runtime_.jsx("svg", {
-                        onClick: ()=>hideModal()
-                        ,
+                        onClick: ()=>hideModal(),
                         xmlns: "http://www.w3.org/2000/svg",
                         width: "32",
                         height: "32",
@@ -262,8 +260,8 @@ function ModalConfirmContact() {
                 ]
             })
         ]
-    }));
-};
+    });
+}
 
 // EXTERNAL MODULE: external "fs"
 var external_fs_ = __webpack_require__(7147);
@@ -292,9 +290,8 @@ var external_react_google_recaptcha_default = /*#__PURE__*/__webpack_require__.n
 
 
 function Contact(props) {
-    const { 0: selectedPrestation , 1: setSelectedPrestation  } = (0,external_react_.useState)('');
-    const reduxPresta = (0,external_react_redux_.useSelector)((state)=>state.presta
-    );
+    const { 0: selectedPrestation , 1: setSelectedPrestation  } = (0,external_react_.useState)("");
+    const reduxPresta = (0,external_react_redux_.useSelector)((state)=>state.presta);
     const { 0: verifiedCaptcha , 1: setVerifiedCaptcha  } = (0,external_react_.useState)(false);
     const recaptchaRef = (0,external_react_.useRef)();
     const policyRef = (0,external_react_.useRef)();
@@ -307,13 +304,13 @@ function Contact(props) {
         reduxPresta
     ]);
     const displayPolicy = ()=>{
-        policyRef.current.childNodes[0].style.display = 'block';
-        document.body.style.overflow = 'hidden';
+        policyRef.current.childNodes[0].style.display = "block";
+        document.body.style.overflow = "hidden";
     };
     const hidePolicy = (e)=>{
-        if (e.target.id === 'contact') {
-            policyRef.current.childNodes[0].style.display = 'none';
-            document.body.style.overflow = 'auto';
+        if (e.target.id === "contact") {
+            policyRef.current.childNodes[0].style.display = "none";
+            document.body.style.overflow = "auto";
         }
     };
     const sendEmail = (e)=>{
@@ -324,17 +321,17 @@ function Contact(props) {
             console.log(error.text);
         });
         formRef.current.reset();
-        modalRef.current.childNodes[0].style.display = 'block';
-        formRef.current.style.pointerEvents = 'none';
-        formRef.current.style.opacity = '0.3';
+        modalRef.current.childNodes[0].style.display = "block";
+        formRef.current.style.pointerEvents = "none";
+        formRef.current.style.opacity = "0.3";
         recaptchaRef.current.reset();
         onReCAPTCHAChange();
-        setSelectedPrestation('');
+        setSelectedPrestation("");
     };
     const onReCAPTCHAChange = (captchaCode)=>{
         setVerifiedCaptcha(!verifiedCaptcha);
     };
-    return(/*#__PURE__*/ (0,jsx_runtime_.jsxs)(jsx_runtime_.Fragment, {
+    return /*#__PURE__*/ (0,jsx_runtime_.jsxs)(jsx_runtime_.Fragment, {
         children: [
             /*#__PURE__*/ (0,jsx_runtime_.jsxs)((head_default()), {
                 children: [
@@ -415,8 +412,7 @@ function Contact(props) {
             /*#__PURE__*/ (0,jsx_runtime_.jsxs)("main", {
                 id: "contact",
                 className: (contact_module_default()).contact,
-                onClick: (e)=>hidePolicy(e)
-                ,
+                onClick: (e)=>hidePolicy(e),
                 onSubmit: sendEmail,
                 children: [
                     /*#__PURE__*/ jsx_runtime_.jsx("h1", {
@@ -450,7 +446,7 @@ function Contact(props) {
                                     "Votre pr\xe9nom ",
                                     /*#__PURE__*/ jsx_runtime_.jsx("span", {
                                         style: {
-                                            color: 'red'
+                                            color: "red"
                                         },
                                         children: "*"
                                     })
@@ -469,7 +465,7 @@ function Contact(props) {
                                     "Votre nom ",
                                     /*#__PURE__*/ jsx_runtime_.jsx("span", {
                                         style: {
-                                            color: 'red'
+                                            color: "red"
                                         },
                                         children: "*"
                                     })
@@ -487,7 +483,7 @@ function Contact(props) {
                                     "Votre adresse email ",
                                     /*#__PURE__*/ jsx_runtime_.jsx("span", {
                                         style: {
-                                            color: 'red'
+                                            color: "red"
                                         },
                                         children: "*"
                                     })
@@ -505,7 +501,7 @@ function Contact(props) {
                                     "Quelle prestation vous int\xe9resse ? ",
                                     /*#__PURE__*/ jsx_runtime_.jsx("span", {
                                         style: {
-                                            color: 'red'
+                                            color: "red"
                                         },
                                         children: "*"
                                     })
@@ -515,8 +511,7 @@ function Contact(props) {
                                 name: "presta",
                                 id: "presta",
                                 value: selectedPrestation,
-                                onChange: (e)=>setSelectedPrestation(e.target.value)
-                                ,
+                                onChange: (e)=>setSelectedPrestation(e.target.value),
                                 children: [
                                     /*#__PURE__*/ jsx_runtime_.jsx("option", {
                                         value: "",
@@ -525,8 +520,7 @@ function Contact(props) {
                                     props.prestations.map((prestation)=>/*#__PURE__*/ jsx_runtime_.jsx("option", {
                                             value: prestation.file,
                                             children: prestation.data.title
-                                        }, prestation.file)
-                                    ),
+                                        }, prestation.file)),
                                     /*#__PURE__*/ jsx_runtime_.jsx("option", {
                                         value: "other",
                                         children: "Autre"
@@ -539,7 +533,7 @@ function Contact(props) {
                                     "Parlez-moi de l'exp\xe9rience photo dont vous r\xeavez : ",
                                     /*#__PURE__*/ jsx_runtime_.jsx("span", {
                                         style: {
-                                            color: 'red'
+                                            color: "red"
                                         },
                                         children: "*"
                                     })
@@ -583,8 +577,7 @@ function Contact(props) {
                                 children: [
                                     "En soumettant ce formulaire, vous reconnaissez avoir pris connaissance de notre politique de confidentialit\xe9 (traitement et utilisation des donn\xe9es) : ",
                                     /*#__PURE__*/ jsx_runtime_.jsx("span", {
-                                        onClick: ()=>displayPolicy()
-                                        ,
+                                        onClick: ()=>displayPolicy(),
                                         className: (contact_module_default()).policyLink,
                                         children: "Cliquez ici"
                                     })
@@ -603,15 +596,14 @@ function Contact(props) {
                 ]
             })
         ]
-    }));
-};
+    });
+}
 async function getStaticProps() {
-    const files = external_fs_default().readdirSync('data/prestations/', "utf-8");
+    const files = external_fs_default().readdirSync("data/prestations/", "utf-8");
     const prestations = files.map((file)=>({
-            file: file.split('.')[0],
-            data: external_gray_matter_default()(external_fs_default().readFileSync(`./data/prestations/${file}`, 'utf-8')).data
-        })
-    );
+            file: file.split(".")[0],
+            data: external_gray_matter_default()(external_fs_default().readFileSync(`./data/prestations/${file}`, "utf-8")).data
+        }));
     return {
         props: {
             prestations

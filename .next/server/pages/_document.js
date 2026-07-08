@@ -19,7 +19,7 @@ __webpack_require__.r(__webpack_exports__);
 
 class MyDocument extends next_document__WEBPACK_IMPORTED_MODULE_1__["default"] {
     render() {
-        return(/*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)(next_document__WEBPACK_IMPORTED_MODULE_1__.Html, {
+        return /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)(next_document__WEBPACK_IMPORTED_MODULE_1__.Html, {
             lang: "fr",
             children: [
                 /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)(next_document__WEBPACK_IMPORTED_MODULE_1__.Head, {
@@ -51,9 +51,9 @@ class MyDocument extends next_document__WEBPACK_IMPORTED_MODULE_1__["default"] {
                     ]
                 })
             ]
-        }));
+        });
     }
-};
+}
 
 
 /***/ }),
@@ -86,10 +86,10 @@ module.exports = require("next/dist/shared/lib/constants.js");
 
 /***/ }),
 
-/***/ 2796:
+/***/ 8743:
 /***/ ((module) => {
 
-module.exports = require("next/dist/shared/lib/head-manager-context.js");
+module.exports = require("next/dist/shared/lib/html-context.js");
 
 /***/ }),
 
@@ -97,13 +97,6 @@ module.exports = require("next/dist/shared/lib/head-manager-context.js");
 /***/ ((module) => {
 
 module.exports = require("next/dist/shared/lib/is-plain-object.js");
-
-/***/ }),
-
-/***/ 9232:
-/***/ ((module) => {
-
-module.exports = require("next/dist/shared/lib/utils.js");
 
 /***/ }),
 

@@ -63,7 +63,7 @@ var Footer_module_default = /*#__PURE__*/__webpack_require__.n(Footer_module);
 
 
 function Footer() {
-    return(/*#__PURE__*/ jsx_runtime_.jsx("footer", {
+    return /*#__PURE__*/ jsx_runtime_.jsx("footer", {
         className: (Footer_module_default()).footer,
         children: /*#__PURE__*/ (0,jsx_runtime_.jsxs)("span", {
             className: (Footer_module_default()).copyright,
@@ -78,11 +78,12 @@ function Footer() {
                 })
             ]
         })
-    }));
-};
+    });
+}
 
 // EXTERNAL MODULE: ./node_modules/next/link.js
 var next_link = __webpack_require__(1664);
+var link_default = /*#__PURE__*/__webpack_require__.n(next_link);
 // EXTERNAL MODULE: ./components/Navbar/Navbar.module.scss
 var Navbar_module = __webpack_require__(1339);
 var Navbar_module_default = /*#__PURE__*/__webpack_require__.n(Navbar_module);
@@ -101,34 +102,35 @@ const ActiveLink = ({ router , href , children  })=>{
         event.preventDefault();
         router.push(href);
     };
-    let pathnameTemp = '';
-    let asPathTemp = '';
-    if (router.pathname === '/prestations/[prestation]') {
-        pathnameTemp = asPathTemp = '/prestations';
+    let pathnameTemp = "";
+    let asPathTemp = "";
+    if (router.pathname === "/prestations/[prestation]") {
+        pathnameTemp = asPathTemp = "/prestations";
     } else {
         pathnameTemp = router.pathname;
         asPathTemp = router.asPath;
     }
     const isCurrentPath = pathnameTemp === href || asPathTemp === href;
-    return(/*#__PURE__*/ jsx_runtime_.jsx("a", {
+    return /*#__PURE__*/ jsx_runtime_.jsx("a", {
         href: href,
         onClick: handleClick,
         className: (Navbar_module_default()).menuItem,
         style: {
-            borderBottom: isCurrentPath ? '1px solid #E8E9E9' : 'none',
+            borderBottom: isCurrentPath ? "1px solid #E8E9E9" : "none",
             opacity: isCurrentPath ? 0.8 : 1
         },
         children: children
-    }));
+    });
 };
 /* harmony default export */ const ActiveLink_ActiveLink = ((0,router_namespaceObject.withRouter)(ActiveLink));
 
 // EXTERNAL MODULE: ./node_modules/next/image.js
 var next_image = __webpack_require__(5675);
+var image_default = /*#__PURE__*/__webpack_require__.n(next_image);
 // EXTERNAL MODULE: external "react-redux"
 var external_react_redux_ = __webpack_require__(6022);
-// EXTERNAL MODULE: ./redux/redux.js
-var redux = __webpack_require__(9787);
+// EXTERNAL MODULE: ./redux/redux.js + 1 modules
+var redux = __webpack_require__(9896);
 ;// CONCATENATED MODULE: ./components/Navbar/Navbar.js
 
 
@@ -146,43 +148,42 @@ function Navbar() {
     const displayMiniMenu = ()=>{
         setMiniMenu(true);
         menuRef.current.style.left = 0;
-        menuRef.current.style.transition = 'left 500ms linear';
+        menuRef.current.style.transition = "left 500ms linear";
         socialRef.current.style.left = 0;
-        socialRef.current.style.transition = 'left 500ms linear';
+        socialRef.current.style.transition = "left 500ms linear";
     };
     const hideMiniMenu = (e)=>{
         setMiniMenu(false);
-        menuRef.current.style.left = '-100vw';
-        socialRef.current.style.left = '-100vw';
+        menuRef.current.style.left = "-100vw";
+        socialRef.current.style.left = "-100vw";
         if (e !== undefined) {
-            if (e.target.innerText === 'CONTACT') {
-                dispatch((0,redux/* updatePresta */.j)(''));
+            if (e.target.innerText === "CONTACT") {
+                dispatch((0,redux/* updatePresta */.j)(""));
             }
         }
-        if (document.body.style.overflow === 'hidden' && e.target.id !== 'closeMiniMenu') {
-            document.body.style.overflow = 'auto';
+        if (document.body.style.overflow === "hidden" && e.target.id !== "closeMiniMenu") {
+            document.body.style.overflow = "auto";
         }
     };
-    return(/*#__PURE__*/ (0,jsx_runtime_.jsxs)("nav", {
+    return /*#__PURE__*/ (0,jsx_runtime_.jsxs)("nav", {
         className: (Navbar_module_default()).navbar,
         children: [
-            /*#__PURE__*/ jsx_runtime_.jsx(next_link["default"], {
+            /*#__PURE__*/ jsx_runtime_.jsx((link_default()), {
                 href: "/",
                 children: /*#__PURE__*/ jsx_runtime_.jsx("a", {
                     className: (Navbar_module_default()).logoNav,
-                    onClick: (e)=>hideMiniMenu(e)
-                    ,
-                    children: /*#__PURE__*/ jsx_runtime_.jsx(next_image["default"], {
+                    onClick: (e)=>hideMiniMenu(e),
+                    children: /*#__PURE__*/ jsx_runtime_.jsx((image_default()), {
                         src: "/resources/LogoNavbar.png",
                         alt: "logo",
                         width: "833",
-                        height: "452"
+                        height: "452",
+                        unoptimized: true
                     })
                 })
             }),
             !miniMenu ? /*#__PURE__*/ jsx_runtime_.jsx("svg", {
-                onClick: (e)=>displayMiniMenu(e)
-                ,
+                onClick: (e)=>displayMiniMenu(e),
                 xmlns: "http://www.w3.org/2000/svg",
                 width: "48",
                 height: "48",
@@ -194,8 +195,7 @@ function Navbar() {
                     d: "M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"
                 })
             }) : /*#__PURE__*/ jsx_runtime_.jsx("svg", {
-                onClick: (e)=>hideMiniMenu(e)
-                ,
+                onClick: (e)=>hideMiniMenu(e),
                 id: "closeMiniMenu",
                 xmlns: "http://www.w3.org/2000/svg",
                 width: "48",
@@ -214,32 +214,28 @@ function Navbar() {
                     /*#__PURE__*/ jsx_runtime_.jsx(ActiveLink_ActiveLink, {
                         href: "/",
                         children: /*#__PURE__*/ jsx_runtime_.jsx("div", {
-                            onClick: (e)=>hideMiniMenu(e)
-                            ,
+                            onClick: (e)=>hideMiniMenu(e),
                             children: "ACCUEIL"
                         })
                     }),
                     /*#__PURE__*/ jsx_runtime_.jsx(ActiveLink_ActiveLink, {
                         href: "/galerie",
                         children: /*#__PURE__*/ jsx_runtime_.jsx("div", {
-                            onClick: (e)=>hideMiniMenu(e)
-                            ,
+                            onClick: (e)=>hideMiniMenu(e),
                             children: "GALERIE"
                         })
                     }),
                     /*#__PURE__*/ jsx_runtime_.jsx(ActiveLink_ActiveLink, {
                         href: "/prestations",
                         children: /*#__PURE__*/ jsx_runtime_.jsx("div", {
-                            onClick: (e)=>hideMiniMenu(e)
-                            ,
+                            onClick: (e)=>hideMiniMenu(e),
                             children: "PRESTATIONS"
                         })
                     }),
                     /*#__PURE__*/ jsx_runtime_.jsx(ActiveLink_ActiveLink, {
                         href: "/contact",
                         children: /*#__PURE__*/ jsx_runtime_.jsx("div", {
-                            onClick: (e)=>hideMiniMenu(e)
-                            ,
+                            onClick: (e)=>hideMiniMenu(e),
                             children: "CONTACT"
                         })
                     })
@@ -250,8 +246,7 @@ function Navbar() {
                 className: (Navbar_module_default()).social,
                 children: [
                     /*#__PURE__*/ jsx_runtime_.jsx("a", {
-                        onClick: ()=>hideMiniMenu()
-                        ,
+                        onClick: ()=>hideMiniMenu(),
                         href: "https://www.facebook.com/",
                         target: "_blank",
                         rel: "noreferrer",
@@ -268,8 +263,7 @@ function Navbar() {
                         })
                     }),
                     /*#__PURE__*/ jsx_runtime_.jsx("a", {
-                        onClick: ()=>hideMiniMenu()
-                        ,
+                        onClick: ()=>hideMiniMenu(),
                         href: "https://www.instagram.com/",
                         target: "_blank",
                         rel: "noreferrer",
@@ -288,8 +282,8 @@ function Navbar() {
                 ]
             })
         ]
-    }));
-};
+    });
+}
 
 ;// CONCATENATED MODULE: ./components/Container/Container.js
 
@@ -297,14 +291,14 @@ function Navbar() {
 
 
 function Container(props) {
-    return(/*#__PURE__*/ (0,jsx_runtime_.jsxs)(jsx_runtime_.Fragment, {
+    return /*#__PURE__*/ (0,jsx_runtime_.jsxs)(jsx_runtime_.Fragment, {
         children: [
             /*#__PURE__*/ jsx_runtime_.jsx(Navbar, {}),
             props.children,
             /*#__PURE__*/ jsx_runtime_.jsx(Footer, {})
         ]
-    }));
-};
+    });
+}
 
 // EXTERNAL MODULE: external "simple-react-lightbox"
 var external_simple_react_lightbox_ = __webpack_require__(3732);
@@ -317,7 +311,7 @@ var external_simple_react_lightbox_default = /*#__PURE__*/__webpack_require__.n(
 
 
 function MyApp({ Component , pageProps  }) {
-    return(/*#__PURE__*/ jsx_runtime_.jsx(external_react_redux_.Provider, {
+    return /*#__PURE__*/ jsx_runtime_.jsx(external_react_redux_.Provider, {
         store: redux/* store */.h,
         children: /*#__PURE__*/ jsx_runtime_.jsx(Container, {
             children: /*#__PURE__*/ jsx_runtime_.jsx((external_simple_react_lightbox_default()), {
@@ -326,34 +320,61 @@ function MyApp({ Component , pageProps  }) {
                 })
             })
         })
-    }));
+    });
 }
 /* harmony default export */ const _app = (MyApp);
 
 
 /***/ }),
 
-/***/ 5184:
-/***/ ((module) => {
+/***/ 9896:
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-module.exports = require("@reduxjs/toolkit");
+
+// EXPORTS
+__webpack_require__.d(__webpack_exports__, {
+  "h": () => (/* binding */ store),
+  "j": () => (/* binding */ updatePresta)
+});
+
+;// CONCATENATED MODULE: external "@reduxjs/toolkit"
+const toolkit_namespaceObject = require("@reduxjs/toolkit");
+;// CONCATENATED MODULE: ./redux/redux.js
+
+const prestaSlice = (0,toolkit_namespaceObject.createSlice)({
+    name: "presta",
+    initialState: "",
+    reducers: {
+        updatePresta: (state, action)=>{
+            state = action.payload;
+            return state;
+        }
+    }
+});
+const { updatePresta  } = prestaSlice.actions;
+const store = (0,toolkit_namespaceObject.configureStore)({
+    reducer: {
+        presta: prestaSlice.reducer
+    }
+});
+
 
 /***/ }),
 
-/***/ 562:
+/***/ 3280:
 /***/ ((module) => {
 
 "use strict";
-module.exports = require("next/dist/server/denormalize-page-path.js");
+module.exports = require("next/dist/shared/lib/app-router-context.js");
 
 /***/ }),
 
-/***/ 8028:
+/***/ 2796:
 /***/ ((module) => {
 
 "use strict";
-module.exports = require("next/dist/server/image-config.js");
+module.exports = require("next/dist/shared/lib/head-manager-context.js");
 
 /***/ }),
 
@@ -381,6 +402,14 @@ module.exports = require("next/dist/shared/lib/image-config-context.js");
 
 /***/ }),
 
+/***/ 5843:
+/***/ ((module) => {
+
+"use strict";
+module.exports = require("next/dist/shared/lib/image-config.js");
+
+/***/ }),
+
 /***/ 8524:
 /***/ ((module) => {
 
@@ -397,11 +426,51 @@ module.exports = require("next/dist/shared/lib/mitt.js");
 
 /***/ }),
 
+/***/ 4406:
+/***/ ((module) => {
+
+"use strict";
+module.exports = require("next/dist/shared/lib/page-path/denormalize-page-path.js");
+
+/***/ }),
+
 /***/ 4964:
 /***/ ((module) => {
 
 "use strict";
 module.exports = require("next/dist/shared/lib/router-context.js");
+
+/***/ }),
+
+/***/ 1751:
+/***/ ((module) => {
+
+"use strict";
+module.exports = require("next/dist/shared/lib/router/utils/add-path-prefix.js");
+
+/***/ }),
+
+/***/ 6220:
+/***/ ((module) => {
+
+"use strict";
+module.exports = require("next/dist/shared/lib/router/utils/compare-states.js");
+
+/***/ }),
+
+/***/ 299:
+/***/ ((module) => {
+
+"use strict";
+module.exports = require("next/dist/shared/lib/router/utils/format-next-pathname-info.js");
+
+/***/ }),
+
+/***/ 3938:
+/***/ ((module) => {
+
+"use strict";
+module.exports = require("next/dist/shared/lib/router/utils/format-url.js");
 
 /***/ }),
 
@@ -413,11 +482,19 @@ module.exports = require("next/dist/shared/lib/router/utils/get-asset-path-from-
 
 /***/ }),
 
-/***/ 4365:
+/***/ 5789:
 /***/ ((module) => {
 
 "use strict";
-module.exports = require("next/dist/shared/lib/router/utils/get-middleware-regex.js");
+module.exports = require("next/dist/shared/lib/router/utils/get-next-pathname-info.js");
+
+/***/ }),
+
+/***/ 1897:
+/***/ ((module) => {
+
+"use strict";
+module.exports = require("next/dist/shared/lib/router/utils/is-bot.js");
 
 /***/ }),
 
@@ -429,6 +506,14 @@ module.exports = require("next/dist/shared/lib/router/utils/is-dynamic.js");
 
 /***/ }),
 
+/***/ 8854:
+/***/ ((module) => {
+
+"use strict";
+module.exports = require("next/dist/shared/lib/router/utils/parse-path.js");
+
+/***/ }),
+
 /***/ 1292:
 /***/ ((module) => {
 
@@ -437,11 +522,27 @@ module.exports = require("next/dist/shared/lib/router/utils/parse-relative-url.j
 
 /***/ }),
 
+/***/ 4567:
+/***/ ((module) => {
+
+"use strict";
+module.exports = require("next/dist/shared/lib/router/utils/path-has-prefix.js");
+
+/***/ }),
+
 /***/ 979:
 /***/ ((module) => {
 
 "use strict";
 module.exports = require("next/dist/shared/lib/router/utils/querystring.js");
+
+/***/ }),
+
+/***/ 3297:
+/***/ ((module) => {
+
+"use strict";
+module.exports = require("next/dist/shared/lib/router/utils/remove-trailing-slash.js");
 
 /***/ }),
 
@@ -516,7 +617,7 @@ module.exports = require("simple-react-lightbox");
 var __webpack_require__ = require("../webpack-runtime.js");
 __webpack_require__.C(exports);
 var __webpack_exec__ = (moduleId) => (__webpack_require__(__webpack_require__.s = moduleId))
-var __webpack_exports__ = __webpack_require__.X(0, [675,676,664,787], () => (__webpack_exec__(4485)));
+var __webpack_exports__ = __webpack_require__.X(0, [675,676,664], () => (__webpack_exec__(4485)));
 module.exports = __webpack_exports__;
 
 })();

@@ -40,7 +40,7 @@ export default function Navbar() {
         <nav className={styles.navbar}>
             <Link href='/'>
                 <a  className={styles.logoNav} onClick={(e) => hideMiniMenu(e)}>
-                    <Image src='/resources/LogoNavbar.png' alt='logo' width='833' height='452'/>
+                    <Image src='/resources/LogoNavbar.png' alt='logo' width='833' height='452' unoptimized/>
                 </a>
             </Link>
             {!miniMenu ? <svg onClick={(e) => displayMiniMenu(e)} xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="currentColor" className={styles.miniMenuBtn} viewBox="0 0 16 16">

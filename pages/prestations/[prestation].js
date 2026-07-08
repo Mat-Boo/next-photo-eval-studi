@@ -49,11 +49,11 @@ export default function Prestation(props) {
                             <p>{props.data.description}</p>
                         </div>
                         <div className={styles.silhouette}>
-                            <Image src={props.data.clipart} alt='clipartPresta' width='150' height='150' />
+                            <Image src={props.data.clipart} alt='clipartPresta' width='150' height='150' unoptimized/>
                         </div>
                     </div>
                     <div className={styles.picture}>
-                        <Image src={props.data.picture} alt={props.data.title + 'Picture'} width='1920' height='1280' />
+                        <Image src={props.data.picture} alt={props.data.title + 'Picture'} width='1920' height='1280' unoptimized />
                     </div>
                     <div className={styles.infos}>
                         <div className={styles.titleAndFare}>

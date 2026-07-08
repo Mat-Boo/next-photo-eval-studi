@@ -25,7 +25,7 @@ export default function PictureGallery({gallery}) {
                         <li key={gallery.data.pictures.indexOf(picture)} className={styles.pictureItem}>
                             <a  href={picture} data-lightbox='models' data-title='Caption1'>
                                 <div className={styles.picture}>
-                                    <Image src={picture} alt={gallery.file + '_' + gallery.data.pictures.indexOf(picture)} width='1920' height='1280'/>
+                                    <Image src={picture} alt={gallery.file + '_' + gallery.data.pictures.indexOf(picture)} width='1920' height='1280' unoptimized/>
                                 </div>
                             </a>
                         </li>

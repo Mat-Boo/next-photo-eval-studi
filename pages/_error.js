@@ -21,7 +21,7 @@ export default function _error() {
                 <div className={styles.logo404}>
                     <span>4</span>
                     <div className={styles.lense}>
-                        <Image src='/resources/404camera.png' alt='cameraLense' width='519' height='519'/>
+                        <Image src='/resources/404camera.png' alt='cameraLense' width='519' height='519' unoptimized/>
                     </div>
                     <span>4</span>
                 </div>

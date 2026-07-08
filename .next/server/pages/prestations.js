@@ -54,6 +54,7 @@ __webpack_require__.d(__webpack_exports__, {
 var jsx_runtime_ = __webpack_require__(997);
 // EXTERNAL MODULE: ./node_modules/next/link.js
 var next_link = __webpack_require__(1664);
+var link_default = /*#__PURE__*/__webpack_require__.n(next_link);
 // EXTERNAL MODULE: external "react"
 var external_react_ = __webpack_require__(6689);
 // EXTERNAL MODULE: ./components/PrestaCard/PrestaCard.module.scss
@@ -61,22 +62,24 @@ var PrestaCard_module = __webpack_require__(8220);
 var PrestaCard_module_default = /*#__PURE__*/__webpack_require__.n(PrestaCard_module);
 // EXTERNAL MODULE: ./node_modules/next/image.js
 var next_image = __webpack_require__(5675);
+var image_default = /*#__PURE__*/__webpack_require__.n(next_image);
 ;// CONCATENATED MODULE: ./components/PrestaCard/PrestaCard.js
 
 
 
 
 function PrestaCard({ prestaPicture , prestaTitle , prestaContent , prestaFare  }) {
-    return(/*#__PURE__*/ (0,jsx_runtime_.jsxs)("div", {
+    return /*#__PURE__*/ (0,jsx_runtime_.jsxs)("div", {
         className: (PrestaCard_module_default()).prestaCard,
         children: [
             /*#__PURE__*/ jsx_runtime_.jsx("div", {
                 className: (PrestaCard_module_default()).picture,
-                children: /*#__PURE__*/ jsx_runtime_.jsx(next_image["default"], {
+                children: /*#__PURE__*/ jsx_runtime_.jsx((image_default()), {
                     src: prestaPicture,
-                    alt: prestaTitle + 'Picture',
+                    alt: prestaTitle + "Picture",
                     width: "1920",
-                    height: "1280"
+                    height: "1280",
+                    unoptimized: true
                 })
             }),
             /*#__PURE__*/ (0,jsx_runtime_.jsxs)("div", {
@@ -91,7 +94,7 @@ function PrestaCard({ prestaPicture , prestaTitle , prestaContent , prestaFare  
                             }),
                             /*#__PURE__*/ jsx_runtime_.jsx("span", {
                                 className: (PrestaCard_module_default()).fare,
-                                children: prestaFare + (isNaN(prestaFare) ? '' : ' €')
+                                children: prestaFare + (isNaN(prestaFare) ? "" : " €")
                             })
                         ]
                     }),
@@ -102,8 +105,8 @@ function PrestaCard({ prestaPicture , prestaTitle , prestaContent , prestaFare  
                 ]
             })
         ]
-    }));
-};
+    });
+}
 
 // EXTERNAL MODULE: ./styles/prestations/prestations.module.scss
 var prestations_module = __webpack_require__(3685);
@@ -127,7 +130,7 @@ var head_default = /*#__PURE__*/__webpack_require__.n(head_);
 
 
 function Prestations(props) {
-    return(/*#__PURE__*/ (0,jsx_runtime_.jsxs)(jsx_runtime_.Fragment, {
+    return /*#__PURE__*/ (0,jsx_runtime_.jsxs)(jsx_runtime_.Fragment, {
         children: [
             /*#__PURE__*/ (0,jsx_runtime_.jsxs)((head_default()), {
                 children: [
@@ -214,8 +217,8 @@ function Prestations(props) {
                     /*#__PURE__*/ jsx_runtime_.jsx("ul", {
                         className: (prestations_module_default()).prestaList,
                         children: props.prestations.map((prestation)=>/*#__PURE__*/ jsx_runtime_.jsx("li", {
-                                children: /*#__PURE__*/ jsx_runtime_.jsx(next_link["default"], {
-                                    href: '/prestations/' + prestation.file,
+                                children: /*#__PURE__*/ jsx_runtime_.jsx((link_default()), {
+                                    href: "/prestations/" + prestation.file,
                                     children: /*#__PURE__*/ jsx_runtime_.jsx("a", {
                                         children: /*#__PURE__*/ jsx_runtime_.jsx(PrestaCard, {
                                             prestaPicture: prestation.data.picture,
@@ -225,21 +228,19 @@ function Prestations(props) {
                                         })
                                     })
                                 })
-                            }, prestation.file)
-                        )
+                            }, prestation.file))
                     })
                 ]
             })
         ]
-    }));
-};
+    });
+}
 async function getStaticProps() {
-    const files = external_fs_default().readdirSync('data/prestations/', "utf-8");
+    const files = external_fs_default().readdirSync("data/prestations/", "utf-8");
     const prestations = files.map((file)=>({
-            file: file.split('.')[0],
-            data: external_gray_matter_default()(external_fs_default().readFileSync(`./data/prestations/${file}`, 'utf-8')).data
-        })
-    );
+            file: file.split(".")[0],
+            data: external_gray_matter_default()(external_fs_default().readFileSync(`./data/prestations/${file}`, "utf-8")).data
+        }));
     return {
         props: {
             prestations
@@ -258,19 +259,19 @@ module.exports = require("gray-matter");
 
 /***/ }),
 
-/***/ 562:
+/***/ 3280:
 /***/ ((module) => {
 
 "use strict";
-module.exports = require("next/dist/server/denormalize-page-path.js");
+module.exports = require("next/dist/shared/lib/app-router-context.js");
 
 /***/ }),
 
-/***/ 8028:
+/***/ 2796:
 /***/ ((module) => {
 
 "use strict";
-module.exports = require("next/dist/server/image-config.js");
+module.exports = require("next/dist/shared/lib/head-manager-context.js");
 
 /***/ }),
 
@@ -298,6 +299,14 @@ module.exports = require("next/dist/shared/lib/image-config-context.js");
 
 /***/ }),
 
+/***/ 5843:
+/***/ ((module) => {
+
+"use strict";
+module.exports = require("next/dist/shared/lib/image-config.js");
+
+/***/ }),
+
 /***/ 8524:
 /***/ ((module) => {
 
@@ -314,11 +323,51 @@ module.exports = require("next/dist/shared/lib/mitt.js");
 
 /***/ }),
 
+/***/ 4406:
+/***/ ((module) => {
+
+"use strict";
+module.exports = require("next/dist/shared/lib/page-path/denormalize-page-path.js");
+
+/***/ }),
+
 /***/ 4964:
 /***/ ((module) => {
 
 "use strict";
 module.exports = require("next/dist/shared/lib/router-context.js");
+
+/***/ }),
+
+/***/ 1751:
+/***/ ((module) => {
+
+"use strict";
+module.exports = require("next/dist/shared/lib/router/utils/add-path-prefix.js");
+
+/***/ }),
+
+/***/ 6220:
+/***/ ((module) => {
+
+"use strict";
+module.exports = require("next/dist/shared/lib/router/utils/compare-states.js");
+
+/***/ }),
+
+/***/ 299:
+/***/ ((module) => {
+
+"use strict";
+module.exports = require("next/dist/shared/lib/router/utils/format-next-pathname-info.js");
+
+/***/ }),
+
+/***/ 3938:
+/***/ ((module) => {
+
+"use strict";
+module.exports = require("next/dist/shared/lib/router/utils/format-url.js");
 
 /***/ }),
 
@@ -330,11 +379,19 @@ module.exports = require("next/dist/shared/lib/router/utils/get-asset-path-from-
 
 /***/ }),
 
-/***/ 4365:
+/***/ 5789:
 /***/ ((module) => {
 
 "use strict";
-module.exports = require("next/dist/shared/lib/router/utils/get-middleware-regex.js");
+module.exports = require("next/dist/shared/lib/router/utils/get-next-pathname-info.js");
+
+/***/ }),
+
+/***/ 1897:
+/***/ ((module) => {
+
+"use strict";
+module.exports = require("next/dist/shared/lib/router/utils/is-bot.js");
 
 /***/ }),
 
@@ -346,6 +403,14 @@ module.exports = require("next/dist/shared/lib/router/utils/is-dynamic.js");
 
 /***/ }),
 
+/***/ 8854:
+/***/ ((module) => {
+
+"use strict";
+module.exports = require("next/dist/shared/lib/router/utils/parse-path.js");
+
+/***/ }),
+
 /***/ 1292:
 /***/ ((module) => {
 
@@ -354,11 +419,27 @@ module.exports = require("next/dist/shared/lib/router/utils/parse-relative-url.j
 
 /***/ }),
 
+/***/ 4567:
+/***/ ((module) => {
+
+"use strict";
+module.exports = require("next/dist/shared/lib/router/utils/path-has-prefix.js");
+
+/***/ }),
+
 /***/ 979:
 /***/ ((module) => {
 
 "use strict";
 module.exports = require("next/dist/shared/lib/router/utils/querystring.js");
+
+/***/ }),
+
+/***/ 3297:
+/***/ ((module) => {
+
+"use strict";
+module.exports = require("next/dist/shared/lib/router/utils/remove-trailing-slash.js");
 
 /***/ }),
 
